@@ -22,7 +22,7 @@ This application generates outfit ideas with the help of AI (openAI). The user s
 
     WIREFRAME: 
      ![opening page](./images/opening page.png)
-     ![display results] (.status/images/cards displayed.png)
+     ![display results] (./images/cards displayed.png)
 
     USER FLOW: user request to chat bot, directed to input selecting page, user slects from input (once selected: this is a commitment to that- or elese user will begin again), carousel page is then loaded with 3 options from the input selected, user picks 3 from selected, and if/when a user likes items they are saved into local storage, to then be displayed in a final page with all saved/liked items for future reference
 
