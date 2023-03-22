@@ -31,17 +31,17 @@
     font-family: "Roboto Serif", "Nunito";
   }
 
-.topnav {
+.searchEng {
     overflow: hidden;
     background-color: #e9e9e9;
 }
 
-.topnav .search-container {
+.searchEng .search-container {
     justify-content: center;
    
 }
 
-.topnav input[type=text] {
+.searchEng input[type=text] {
   padding: 6px;
   margin-top: 8px;
   font-size: 17px;
@@ -50,7 +50,7 @@
 
 
 @media screen and (max-width: 600px) {
-  .topnav .search-container {
+  .searchEng .search-container {
     float: none;
   }
   .topnav a, .topnav input[type=text], .topnav .search-container button {
@@ -61,6 +61,6 @@
     margin: 0;
     padding: 14px;
   }
-  .topnav input[type=text] {
+  .searchEng input[type=text] {
     border: 1px solid #ccc;  
   }
