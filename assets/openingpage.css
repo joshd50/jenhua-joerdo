@@ -1,3 +1,4 @@
+/* Root */
 :root {
     --gray: gray;
     --lightGray: rgb(152, 152, 152); 
@@ -6,11 +7,13 @@
     --white: white; 
 }
 
+/* All Elements */
 * {
     margin: 0;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+/* Header */
 .site-header {
     display: flex;
     width: 100%;
@@ -45,6 +48,7 @@
     color: var(--black);
 }
 
+/* Hero Header */
 .hero {
     display: flex;
     justify-content: center;
@@ -60,6 +64,7 @@
     font-size: 10vw;
 }
 
+/* Form */
 .formContainer {
 
 }
@@ -92,6 +97,7 @@
     text-align: center;
 }
 
+/* Select */
 .formSelect {
     border: 2px solid var(--gray);
     padding: 0.5%;
@@ -107,6 +113,7 @@ select option {
     font-size: 5px;
 }
 
+/* Submit */
 form button {
     display: block;
     border: px solid var(--gray);
@@ -119,6 +126,7 @@ form button {
     background-color: var(--darkGray);
 }
 
+/* Footer */
 footer {
     display: flex;
     flex-direction: column;

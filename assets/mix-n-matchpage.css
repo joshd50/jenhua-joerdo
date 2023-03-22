@@ -1,12 +1,51 @@
-* {
-    margin: 0;
+/* Root */
+:root {
+    --gray: gray;
+    --lightGray: rgb(152, 152, 152); 
+    --darkGray: rgb(93, 93, 93);
+    --black: black;
+    --white: white; 
 }
 
-header {
+/* All Elements */
+* {
+    margin: 0;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Header */
+.site-header {
     display: flex;
-    justify-content: space-between;
-    border: 5px solid black;
-    height: 50px;
+    width: 100%;
+}
+
+.logo {
+    width: 5%;
+    margin-left: 1%;
+    font-size: 26px;
+    font-weight: bold;
+}
+
+.navBar {
+    width: 100vw;
+    margin-top: 7px;
+}
+
+.nav {
+    float: right;
+    color: var(--gray);
+    margin-right: 2%;
+    text-decoration: none;
+}
+
+.nav:link,
+.nav:visited {
+    color: var(--gray);
+}
+
+.nav:hover,
+.nav:active {
+    color: var(--black);
 }
 
 .carousel {
