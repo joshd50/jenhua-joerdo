@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Carousel Template</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- Add the Bootstrap stylesheet -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<!-- Add the jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<!-- Add the Bootstrap JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    </head>
+
+    <header>
+        <h1>The Code Cartel</h1>
+    </header>
+
+    <!-- Navbar -->
+    <nav>
+        <ul class = "nav_links">
+            <li><a href="#">Shopping</a></li>
+            <li><a href="#">Random Outfit</a></li>
+            <li><a href="#">Past Styles</a></li>
+        </ul>
+        <a class="cta" href="#"><button>Home</button></a>   
+    </nav>
+
+    <body>
+
+	<!-- Add the carousel -->
+	<div id="myCarousel" class="carousel slide" data-ride="carousel">
+
+		<!-- Add the indicators -->
+		<ol class="carousel-indicators">
+			<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+			<li data-target="#myCarousel" data-slide-to="1"></li>
+			<li data-target="#myCarousel" data-slide-to="2"></li>
+		</ol>
+
+		<!-- Add the slides -->
+		<div class="carousel-inner">
+			<div class="carousel-item active">
+				<img src="image1.jpg" alt="Image 1">
+				<div class="carousel-caption">
+					<h3>Image 1</h3>
+					<p>Description of Image 1</p>
+				</div>
+			</div>
+			<div class="carousel-item">
+				<img src="image2.jpg" alt="Image 2">
+				<div class="carousel-caption">
+					<h3>Image 2</h3>
+					<p>Description of Image 2</p>
+				</div>
+			</div>
+			<div class="carousel-item">
+				<img src="image3.jpg" alt="Image 3">
+				<div class="carousel-caption">
+					<h3>Image 3</h3>
+					<p>Description of Image 3</p>
+				</div>
+			</div>
+		</div>
+
+		<!-- Add the controls -->
+		<a class="carousel-control-prev" href="#myCarousel" data-slide="prev">
+			<span class="carousel-control-prev-icon"></span>
+		</a>
+		<a class="carousel-control-next" href="#myCarousel" data-slide="next">
+			<span class="carousel-control-next-icon"></span>
+		</a>
+
+	</div>
+
+    <!--search bar engine-->
+    <div>
+        
+    </div>
+</body>
+</html>
