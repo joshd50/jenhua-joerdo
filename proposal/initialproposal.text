@@ -1,0 +1,65 @@
+GROUP NAME: code-cartel
+
+PROJECT TITLE: Stylist.AI
+
+DESCRIPTION: 
+
+This application generates outfit ideas with the help of AI (openAI). The user searches what outfit they need ideas for from AI based off of their gender specification (m/f/gn), AI gives clothing ideas, from clothing items suggested from AI, it will prompt GOOGLE search to search 3 total items of clothing (ex: top, bottom, shoes), those items will be displayed on page (can limit search to a price range)
+
+
+
+    USER STORY: I am a user looking for suggestion(s) to build an outfit
+
+    ACCEPTANCE CRITERIA:
+
+        when I visit the home page I am presented with a prompt entry for what I am looking for
+        when I input my requests into the AI 
+        then I am directed to a second page with input selectors based off of a specific item
+        when I select an option from one drop down input selector I am  then commiting my input
+        then I am given options based off of the input selected
+        when I like an item from options then the liked items are saved into Local Storage for future refernce
+        then I can go back and reference my liked choices in another page
+
+    WIREFRAME: 
+     ![opening page](./images/opening page.png)
+     ![display results] (./images/cards displayed.png)
+
+    USER FLOW: user request to chat bot, directed to input selecting page, user slects from input (once selected: this is a commitment to that- or elese user will begin again), carousel page is then loaded with 3 options from the input selected, user picks 3 from selected, and if/when a user likes items they are saved into local storage, to then be displayed in a final page with all saved/liked items for future reference
+
+    APIS: Open AI chat feature, Google data scrape
+
+    TASK BREAKDOWN:
+
+    Joseph: 1. Wireframe
+            2. CSS
+            3. Local storage >> displaying into page
+
+    Josh: 1. Gdata parsing
+            a. getting from object desired input to 
+          2. 3 variables from data for 
+
+
+    Jennifer: 1. Proposal
+             2. HTML- opening page 
+             3. GPT prompt, and GPT API calls from prompt
+
+    Eduardo: 1. HTML- display results page
+             2. HTML- saved selections page
+
+
+
+     HTML, CSS, JS:
+
+     JS: GPT AI,  AI PROMPT, GOOGLE DATA API, FETCHING G-DATA API, LOCAL STORAGE,
+        RESULTS FROM GDATA SCRAPER TO DISPLAY ON PAGE TO MATCH WIREFRAME,
+        CONNECTING GPT TO GDATA (SEARCH RESULTS LIM. TO 3), GDATA PARSING
+
+     HTML: HTML BUILD- ONE PAGE FOR OPENING/ HERO PAGE WIREFRAME REPLICATION
+            SECOND PAGE FOR RESULTS FROM WIREFRAME REPLICATION
+            HTML BUILD THIRD PAGE FOR SAVED RESULTS
+
+     CSS: MEDIA QUERY(S), STYLING
+
+
+    // from user prompt, send to gpt, gpt will send 3 results to gdata, and gdata will display 3 results from search, to then be //parsed into results page.
+    //anytime a result is liked, will be saved into local storage (for future refrence)
