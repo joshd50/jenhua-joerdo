@@ -1,9 +1,12 @@
 
-function OpenaiFetchAPI() {
+function OpenaiFetchAPI(userInput,value) {
   console.log("Calling GPT3");
   var url = "https://api.openai.com/v1/completions";
   var bearer =
-    "Bearer " + "API_KEY";
+    "Bearer " + "API_KEY_HERE";
+
+    var prmpt = "You are a fashion expert. Please create a 3 piece outfit (15 words max) for a" + value + "who needs" + userInput +". The items generated should include a random list of tops, bottoms, shoes, or accessories. Please limit details, only output the items generated, and do not reference their gender."
+
   fetch(url, {
     method: "POST",
     headers: {
@@ -12,7 +15,7 @@ function OpenaiFetchAPI() {
     },
     body: JSON.stringify({
         model: 'text-davinci-003',
-      prompt: "Please create a 3 piece outfit (15 words max) for a person who needs a new look. The items generated should include a random list of tops, bottoms, shoes, or accessories. Please limit details, only output the items generated, and do not refrence their gender.", // THIS IS WHERE PROMPT WILL GO
+      prompt: prmpt, // THIS IS WHERE PROMPT WILL GO
       max_tokens: 100,
       temperature: 1,
     }),
@@ -70,17 +73,22 @@ function renderOutput(data) {
 function submitPrompt(event) {
   event.preventDefault();
   var userInput = document.getElementById("floatingInputValue").value;
-  console.log(userInput)
+  // console.log(userInput)
   var e = document.getElementById("gender");
   var value = e.value;
-  var text = e.options[e.selectedIndex].text; 
-  console.log(value)
-  console.log(text)
-
-  if userInput == ""; print("Please input text");
-  };
+  // console.log(value)
 
 
+  // modal will replace the window alert
+  if (userInput === "") { 
+    alert('empty message')
+
+  } else if (userInput.length < 5 ) { 
+    alert('empty message')
+
+  } else {
+    OpenaiFetchAPI (userInput,value)}
+}
 
 
 var form = document.getElementById('form')
@@ -88,4 +96,3 @@ form.addEventListener("submit", submitPrompt);
 
 
 // submitPrompt();
-
