@@ -76,6 +76,8 @@ function submitPrompt(event) {
   var text = e.options[e.selectedIndex].text; 
   console.log(value)
   console.log(text)
+
+  if userInput == ""; print("Please input text");
   };
 
 
