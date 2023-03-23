@@ -82,7 +82,7 @@ footer {
     flex-direction: column;
     justify-content: flex-end;
     height: 100px;
-    margin-bottom: 1%;
+    margin-bottom: 0%;
 }
 
 .footerLinks {
@@ -111,7 +111,7 @@ footer {
 .carousel {
     width: 80vw;
     height: 80vh;
-    margin: 2vh auto;
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
 }
@@ -123,7 +123,6 @@ footer {
  width: 75%;
  height: 75%;
  margin: 0 auto;
- overflow: auto;
 }
 
 .shirtsRow,
@@ -137,41 +136,34 @@ footer {
     width: 60%;
     height: 90%;
     margin: 0 auto;
-
+    margin-bottom: 2vh;
 }
 
 .shirtsRow li,
 .pantsRow li,
 .shoesRow li {
-    background-color: var(--white);
+    background-color: var(--gray);
     border-radius: 25px;
     height: 85%;
     width: 32%;
     margin: 30px auto;
     z-index: 0;
-    overflow: scroll;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 16px 50px 0 rgba(0, 0, 0, 0.5);
 }
 
-.shirtsRow li img,
-.pantsRow li img,
-.shoesRow li img{
-    width: 100%;
-    height: 100%;
-}
-
-.shirtsRow li div,
-.pantsRow li div,
-.shoesRow li div {
-    width: 70%;
-    text-align: center;
-    margin: 0 auto 2%;
-}
+/* .shirtsRow li:hover,
+.pantsRow li:hover,
+.shoesRow li:hover,
+#mainShirt:hover,
+#mainPants:hover,
+#mainShoes:hover {
+    border: 2px solid black;
+}  */
 
 .shirtsRow li:hover,
 .pantsRow li:hover,
 .shoesRow li:hover {
     /* border: 2px solid rgba(49, 49, 49, 0.513); */
+    background-color:rgba(0, 0, 0, 0.7);
     cursor: pointer;
 } 
 
@@ -179,52 +171,30 @@ footer {
 .pantsRow li:active,
 .shoesRow li:active {
     /* border: 2px solid rgba(49, 49, 49, 0.513); */
+    background-color:rgba(82, 82, 82, 0.7);
     cursor: pointer;
-    scale: 1.1;
-    border: 2px solid rgba(12, 12, 12, 0.531);
 } 
 
-.mainShirts,
-.mainPants,
-.mainShoes {
-    flex-direction: column;
-    background-color: var(--white);
+#mainShirts,
+#mainPants,
+#mainShoes {
+    display: inline-flex;
+    background-color: var(--gray);
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 16px 50px 0 rgba(0, 0, 0, 1.5);
     border-radius: 25px;
     height: 90%;
     width: 35%;
     margin: 2% auto;
     z-index: 1;
-    transform: scale(1.2,1);
-    overflow: scroll;
+    transform: scale(1.2,1)
 }
 
-.mainShirts img,
-.mainPants img,
-.mainShoes img {
-    width: 100%;
-    height: 100%;
-}
 
-.mainShirts div,
-.mainPants div,
-.mainShoes div {
-    width: 70%;
-    text-align: center;
-    margin: 0 auto 2%;
-}
-
-.mainShirts:hover,
-.mainPants:hover,
-.mainShoes:hover {
+#mainShirts:hover,
+#mainPants:hover,
+#mainShoes:hover {
     scale: 1.1;
 } 
-
-.carousel h3 {
-    display: block;
-    text-align: center;
-    margin: 2%;
-}
 
 /* Past Styles */
 #pastStyles {
@@ -233,7 +203,7 @@ footer {
 
 #pastStyles h2 {
     text-align: center;
-    font-size: 50px;
+    font-size: 70px;
     margin-top: 7vh;
     border: 5px solid black;
 }
@@ -248,15 +218,9 @@ footer {
 }
 
 .outfit {
-    border: 5px solid gray;
-    border-radius: 25px;
+    border: 5px solid blue;
     list-style-type: none;
     width: 5%;
-    background-color: white;
-}
-
-.outfit:hover {
-    transform: scale(3, 1)
 }
 
 /* Media Queries */
@@ -282,28 +246,10 @@ footer {
         padding-right: 5%;
         display: flex;
         flex-direction: row;
-        width: 95%;
-        height: 70%;
+        width: 90%;
+        height: 90%;
         margin: 0 auto;
         margin-bottom: 2vh;
-}
-
-.shirtsRow li div,
-.pantsRow li div,
-.shoesRow li div {
-    width: 70%;
-    text-align: center;
-    margin: 0 auto 2%;
-    font-size: 12px;
-}
-
-.mainShirts div,
-.mainPants div,
-.mainShoes div {
-    width: 70%;
-    text-align: center;
-    margin: 0 auto 2%;
-    font-size: 12px;
 }
 }
 /* 
