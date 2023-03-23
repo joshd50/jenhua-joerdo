@@ -39,7 +39,7 @@
     <div class="formContainer">
         <div class="form">
             <!--form-->
-            <form>
+            <form id="form">
                 <!--user input-->
                 <div class="formOutfit">
                     <input type="user-input" class="formOutfitInput" id="floatingInputValue" placeholder="for occasion"
@@ -47,14 +47,15 @@
                     <label for="floatingInputValue">I would like an outfit for</label> <!--header for input-->
                 </div>
                 <!--select drop down-->
-                <select class="formSelect" aria-label="Default select example">
-                    <option selected>select gender</option>
-                    <option value="1">Male</option>
-                    <option value="2">Female</option>
-                    <option value="3">Gender Neutral</option>
+                <select id="gender" class="formSelect" aria-label="Default select example" required>
+                    <option value="" disabled selected>select gender</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Gender Neutral">Gender Neutral</option>
                 </select>
                 <!--submit button-->
-                <button href="#">Submit</button>
+                <input id="homebutton" type="submit" value="Submit">
+                <button  href="#">Submit</button>
             </form>
             <!--form end-->
         </div>
@@ -71,6 +72,7 @@
      </footer>
 </body>
 
+<script src="../davinci-ai/aiscript.js"></script>
 <!--place JS styling link here-->
 
 </html>
