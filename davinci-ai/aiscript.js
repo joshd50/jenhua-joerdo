@@ -1,9 +1,11 @@
+var aiResponse
+
 
 function OpenaiFetchAPI(userInput,value) {
   console.log("Calling GPT3");
   var url = "https://api.openai.com/v1/completions";
   var bearer =
-    "Bearer " + "API_KEY_HERE";
+    "Bearer " + "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";
 
     var prmpt = "You are a fashion expert. Please create a 3 piece outfit (15 words max) for a" + value + "who needs" + userInput +". The items generated should include a random list of tops, bottoms, shoes, or accessories. Please limit details, only output the items generated, and do not reference their gender."
 
@@ -24,10 +26,13 @@ function OpenaiFetchAPI(userInput,value) {
       return response.json();
     })
     .then((data) => {
-      console.log(data);
-      console.log(typeof data);
-      console.log(Object.keys(data));
+
       console.log(data["choices"][0].text);
+      aiResponse = data["choices"][0].text
+//save reponse to local storage
+      localStorage.setItem('data',aiResponse);
+      window.location.assign("../displayJB2.html")
+      
     })
     .catch((error) => {
       console.log("Something bad happened " + error);
@@ -89,6 +94,7 @@ function submitPrompt(event) {
   } else {
     OpenaiFetchAPI (userInput,value)}
 }
+
 
 
 var form = document.getElementById('form')
