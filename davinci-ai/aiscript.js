@@ -1,8 +1,9 @@
+
 function OpenaiFetchAPI() {
   console.log("Calling GPT3");
   var url = "https://api.openai.com/v1/completions";
   var bearer =
-    "Bearer " + "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";
+    "Bearer " + "API_KEY";
   fetch(url, {
     method: "POST",
     headers: {
@@ -11,7 +12,7 @@ function OpenaiFetchAPI() {
     },
     body: JSON.stringify({
         model: 'text-davinci-003',
-      prompt: "who is the author of to kill a mockingbird?", //enter prompt here
+      prompt: "Please create a 3 piece outfit (15 words max) for a person who needs a new look. The items generated should include a random list of tops, bottoms, shoes, or accessories. Please limit details, only output the items generated, and do not refrence their gender.", // THIS IS WHERE PROMPT WILL GO
       max_tokens: 100,
       temperature: 1,
     }),
@@ -30,4 +31,59 @@ function OpenaiFetchAPI() {
     });
 }
 
-OpenaiFetchAPI();
+// GLOBAL VARIABLES
+var button = document.getElementById("homebutton");
+var userSelected = document.getElementById("selection");
+
+function fetchOutput(userInput, userSelection) {
+  var output = userInput + " " + userSelection; 
+  output = output.split(" ");
+  output = output.join(" + ");
+  console.log(output)
+
+  fetch(OpenaiFetchAPI + "?q=" + output)
+    .then(function(response) {
+      if (!response.ok) {
+          throw new Error('Error getting AI data.');
+      }
+      return response.json();
+    })
+    .then(function(data) {
+      console.log(data);
+      renderOutput(data);
+    })
+    .catch(function(error) {
+      console.log('Error: ' + error.message);
+    })
+    .finally(function() {
+    });
+}
+
+function renderOutput(data) {
+  console.log(data[0]);
+  for (var i = 0; i < 3; i++) {
+    var objectOutput = data.object[i].text;
+    console.log(objectOutput);
+  }
+}
+
+function submitPrompt(event) {
+  event.preventDefault();
+  var userInput = document.getElementById("floatingInputValue").value;
+  console.log(userInput)
+  var e = document.getElementById("gender");
+  var value = e.value;
+  var text = e.options[e.selectedIndex].text; 
+  console.log(value)
+  console.log(text)
+  };
+
+
+
+
+var form = document.getElementById('form')
+form.addEventListener("submit", submitPrompt);
+
+
+// submitPrompt();
+
