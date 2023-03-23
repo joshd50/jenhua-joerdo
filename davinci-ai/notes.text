@@ -1,0 +1,7 @@
+"Please create a 3 piece outfit (15 words max) for a woman who needs a new look. The items generated should include a random list of tops, bottoms, shoes, or accessories. Please limit details, only output the items generated, and do not refrence their gender."
+
+"Please create a 3 piece outfit (15 words max) for a man who needs a new look. The items generated should include a random list of tops, bottoms, shoes, or accessories. Please limit details, only output the items generated, and do not refrence their gender."
+
+"Please create a 3 piece outfit (15 words max) for a gender neutral person who needs a new look. The items generated should include a random list of tops, bottoms, shoes, or accessories. Please limit details, only output the items generated, and do not refrence their gender."
+
+var for user [];
