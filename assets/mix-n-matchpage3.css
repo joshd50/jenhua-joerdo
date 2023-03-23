@@ -204,7 +204,23 @@ footer {
 #pastStyles h2 {
     text-align: center;
     font-size: 70px;
-    margin-top: 
+    margin-top: 7vh;
+    border: 5px solid black;
+}
+
+#hanger {
+    border: 5px solid red;
+    display: flex;
+    flex-direction: row;
+    height: 75vh;
+    width: 75vw;
+    margin: 0 auto;
+}
+
+.outfit {
+    border: 5px solid blue;
+    list-style-type: none;
+    width: 5%;
 }
 
 /* Media Queries */
