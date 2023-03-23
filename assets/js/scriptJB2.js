@@ -3,6 +3,11 @@ var midSearch
 var bottomSearch
 var topIndex = 0
 
+var topText = "white linen shirt mens"
+var bottomText = "white shorts mens"
+var shoeText = "boat shoes mens"
+
+
 
 const options = {
 	method: 'GET',
@@ -176,21 +181,25 @@ function renderShoe (shoeData) {
 
 
 
-function logSubmit(event) {
-	event.preventDefault();
-	const topInput = document.getElementById("top-input");
-	const bottomInput = document.getElementById("bottom-input");
-	const shoeInput = document.getElementById("shoe-input");
-	const topText = topInput.value;
-	const bottomText = bottomInput.value;
-	const shoeText = shoeInput.value;
+// function logSubmit(event) {
+// 	event.preventDefault();
+// 	const topInput = document.getElementById("top-input");
+// 	const bottomInput = document.getElementById("bottom-input");
+// 	const shoeInput = document.getElementById("shoe-input");
+// 	const topText = topInput.value;
+// 	const bottomText = bottomInput.value;
+// 	const shoeText = shoeInput.value;
+// 	fetchTopSearch(topText);
+// 	fetchBottomSearch(bottomText);
+// 	fetchShoeSearch(shoeText);
+
+// }
+
+// const form = document.getElementById("form");
+// const log = document.getElementById("log");
+// form.addEventListener("submit", logSubmit);
+
+
 	fetchTopSearch(topText);
 	fetchBottomSearch(bottomText);
 	fetchShoeSearch(shoeText);
-
-}
-
-const form = document.getElementById("form");
-const log = document.getElementById("log");
-form.addEventListener("submit", logSubmit);
-
