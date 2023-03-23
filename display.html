@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Stylist.Ai</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="display.css">
+	<link rel="stylesheet" href="like.css">
+	<!-- Add the Bootstrap stylesheet -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<link rel="stylesheet" href="./assets/mix-n-matchpage.css">
+	<!-- Add the jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<!-- Add the Bootstrap JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    </head>
+
+    <header class="site-header sticky-top py-1 bg-light">
+		<!--navbar-->
+		<nav class="container d-flex flex-column flex-md-row justify-content-end gap-4">
+			<!--nav header title-->
+			<h4 class="py-2 fs-16 fw-light" href="#" aria-label="Company">Stylist.Ai</h4>
+			<!--nav links-->
+			<a class="nav-link px-2 text-muted d-md-inline-block" href="#">Home</a>
+			<a class="nav-link px-2 text-muted d-md-inline-block" href="#">Past Styles</a>
+			<a class="nav-link px-2 text-muted d-md-inline-block" href="#">Outfit</a>
+			<a class="nav-link px-2 text-muted d-md-inline-block" href="#">Shopping</a>
+		</nav>
+	</header>
+
+    <body>
+
+		<!-- Add the me gusta btn -->
+		<button class="button button-like">
+			<i class="fa fa-heart"></i>
+			<span>❤ Like  </span>
+		</button>
+
+	<!-- Add the carousel #1 -->
+	<div class="container">
+		<div id="carouselExampleCaptions" class="carousel slide">
+			<div class="carousel-indicators">
+			  <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+			  <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+			  <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+			</div>
+			<div class="carousel-inner">
+			  <div class="carousel-item active">
+				<div class="col-lg-4">
+					<img src="..." class="d-block w-100" alt="...">
+				</div>
+				<div class="col-lg-4">
+					<img src="..." class="d-block w-100" alt="...">
+				</div>
+				<div class="col-lg-4">
+					<img src="..." class="d-block w-100" alt="...">
+				</div>
+				<div class="carousel-caption d-none d-md-block">
+				  <h5>First slide label</h5>
+				  <p>Some representative placeholder content for the first slide.</p>
+				</div>
+			  </div>
+			  <div class="carousel-item">
+				<div class="col-lg-4">
+					<img src="..." class="d-block w-100" alt="...">
+				</div>
+				<div class="col-lg-4">
+					<img src="..." class="d-block w-100" alt="...">
+				</div>
+				<div class="col-lg-4">
+					<img src="..." class="d-block w-100" alt="...">
+				</div>
+				<div class="carousel-caption d-none d-md-block">
+				  <h5>Second slide label</h5>
+				  <p>Some representative placeholder content for the second slide.</p>
+				</div>
+			  </div>
+			  <div class="carousel-item">
+				<div class="col-lg-4">
+					<img src="..." class="d-block w-100" alt="...">
+				</div>
+				<div class="col-lg-4">
+					<img src="..." class="d-block w-100" alt="...">
+				</div>
+				<div class="col-lg-4">
+					<img src="..." class="d-block w-100" alt="...">
+				</div>
+				
+				<div class="carousel-caption d-none d-md-block">
+				  <h5>Third slide label</h5>
+				  <p>Some representative placeholder content for the third slide.</p>
+				</div>
+			  </div>
+			</div>
+			<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+			  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+			  <span class="visually-hidden">Previous</span>
+			</button>
+			<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+			  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+			  <span class="visually-hidden">Next</span>
+			</button>
+		</div>
+		<!-- Add the me gusta btn -->
+<button class="button button-like">
+	<i class="fa fa-heart"></i>
+	<span>❤ Like  </span>
+</button>
+		<div id="carouselExampleCaptions" class="carousel slide">
+			<div class="carousel-indicators">
+			  <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+			  <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+			  <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+			</div>
+			<div class="carousel-inner">
+			  <div class="carousel-item active">
+				<div class="col-lg-4">
+					<img src="..." class="d-block w-100" alt="...">
+				</div>
+				<div class="col-lg-4">
+					<img src="..." class="d-block w-100" alt="...">
+				</div>
+				<div class="col-lg-4">
+					<img src="..." class="d-block w-100" alt="...">
+				</div>
+				<div class="carousel-caption d-none d-md-block">
+				  <h5>First slide label</h5>
+				  <p>Some representative placeholder content for the first slide.</p>
+				</div>
+			  </div>
+			  <div class="carousel-item">
+				<div class="col-lg-4">
+					<img src="..." class="d-block w-100" alt="...">
+				</div>
+				<div class="col-lg-4">
+					<img src="..." class="d-block w-100" alt="...">
+				</div>
+				<div class="col-lg-4">
+					<img src="..." class="d-block w-100" alt="...">
+				</div>
+				<div class="carousel-caption d-none d-md-block">
+				  <h5>Second slide label</h5>
+				  <p>Some representative placeholder content for the second slide.</p>
+				</div>
+			  </div>
+			  <div class="carousel-item">
+				<div class="col-lg-4">
+					<img src="..." class="d-block w-100" alt="...">
+				</div>
+				<div class="col-lg-4">
+					<img src="..." class="d-block w-100" alt="...">
+				</div>
+				<div class="col-lg-4">
+					<img src="..." class="d-block w-100" alt="...">
+				</div>
+				
+				<div class="carousel-caption d-none d-md-block">
+				  <h5>Third slide label</h5>
+				  <p>Some representative placeholder content for the third slide.</p>
+				</div>
+			  </div>
+			</div>
+			<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+			  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+			  <span class="visually-hidden">Previous</span>
+			</button>
+			<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+			  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+			  <span class="visually-hidden">Next</span>
+			</button>
+		  </div>
+		  
+	  <!-- Add the me gusta btn -->
+	  <button class="button button-like">
+		<i class="fa fa-heart"></i>
+		<span>❤ Like  </span>
+	  </button>
+
+	<!-- Add the carousel #2 -->
+
+	<div class="container">
+		<div id="carouselExampleCaptions" class="carousel slide">
+			<div class="carousel-indicators">
+			  <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+			  <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+			  <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+			</div>
+			<div class="carousel-inner">
+			  <div class="carousel-item active">
+				<div class="col-lg-4">
+					<img src="..." class="d-block w-100" alt="...">
+				</div>
+				<div class="col-lg-4">
+					<img src="..." class="d-block w-100" alt="...">
+				</div>
+				<div class="col-lg-4">
+					<img src="..." class="d-block w-100" alt="...">
+				</div>
+				<div class="carousel-caption d-none d-md-block">
+				  <h5>First slide label</h5>
+				  <p>Some representative placeholder content for the first slide.</p>
+				</div>
+			  </div>
+			  <div class="carousel-item">
+				<div class="col-lg-4">
+					<img src="..." class="d-block w-100" alt="...">
+				</div>
+				<div class="col-lg-4">
+					<img src="..." class="d-block w-100" alt="...">
+				</div>
+				<div class="col-lg-4">
+					<img src="..." class="d-block w-100" alt="...">
+				</div>
+				<div class="carousel-caption d-none d-md-block">
+				  <h5>Second slide label</h5>
+				  <p>Some representative placeholder content for the second slide.</p>
+				</div>
+			  </div>
+			  <div class="carousel-item">
+				<div class="col-lg-4">
+					<img src="..." class="d-block w-100" alt="...">
+				</div>
+				<div class="col-lg-4">
+					<img src="..." class="d-block w-100" alt="...">
+				</div>
+				<div class="col-lg-4">
+					<img src="..." class="d-block w-100" alt="...">
+				</div>
+				
+				<div class="carousel-caption d-none d-md-block">
+				  <h5>Third slide label</h5>
+				  <p>Some representative placeholder content for the third slide.</p>
+				</div>
+			  </div>
+			</div>
+			<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+			  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+			  <span class="visually-hidden">Previous</span>
+			</button>
+			<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+			  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+			  <span class="visually-hidden">Next</span>
+			</button>
+		</div>
+		<!-- Add the me gusta btn -->
+<button class="button button-like">
+	<i class="fa fa-heart"></i>
+	<span>❤ Like  </span>
+</button>
+		<div id="carouselExampleCaptions" class="carousel slide">
+			<div class="carousel-indicators">
+			  <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+			  <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+			  <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+			</div>
+			<div class="carousel-inner">
+			  <div class="carousel-item active">
+				<div class="col-lg-4">
+					<img src="..." class="d-block w-100" alt="...">
+				</div>
+				<div class="col-lg-4">
+					<img src="..." class="d-block w-100" alt="...">
+				</div>
+				<div class="col-lg-4">
+					<img src="..." class="d-block w-100" alt="...">
+				</div>
+				<div class="carousel-caption d-none d-md-block">
+				  <h5>First slide label</h5>
+				  <p>Some representative placeholder content for the first slide.</p>
+				</div>
+			  </div>
+			  <div class="carousel-item">
+				<div class="col-lg-4">
+					<img src="..." class="d-block w-100" alt="...">
+				</div>
+				<div class="col-lg-4">
+					<img src="..." class="d-block w-100" alt="...">
+				</div>
+				<div class="col-lg-4">
+					<img src="..." class="d-block w-100" alt="...">
+				</div>
+				<div class="carousel-caption d-none d-md-block">
+				  <h5>Second slide label</h5>
+				  <p>Some representative placeholder content for the second slide.</p>
+				</div>
+			  </div>
+			  <div class="carousel-item">
+				<div class="col-lg-4">
+					<img src="..." class="d-block w-100" alt="...">
+				</div>
+				<div class="col-lg-4">
+					<img src="..." class="d-block w-100" alt="...">
+				</div>
+				<div class="col-lg-4">
+					<img src="..." class="d-block w-100" alt="...">
+				</div>
+				
+				<div class="carousel-caption d-none d-md-block">
+				  <h5>Third slide label</h5>
+				  <p>Some representative placeholder content for the third slide.</p>
+				</div>
+			  </div>
+			</div>
+			<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+			  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+			  <span class="visually-hidden">Previous</span>
+			</button>
+			<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+			  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+			  <span class="visually-hidden">Next</span>
+			</button>
+		  </div>
+
+	  <!-- Add the me gusta btn -->
+	<button class="button button-like">
+		<i class="fa fa-heart"></i>
+		<span>❤ Like  </span>
+	</button>
+
+	  <!-- Add the carousel #3 -->
+
+	  <div class="container">
+		<div id="carouselExampleCaptions" class="carousel slide">
+			<div class="carousel-indicators">
+			  <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+			  <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+			  <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+			</div>
+			<div class="carousel-inner">
+			  <div class="carousel-item active">
+				<div class="col-lg-4">
+					<img src="..." class="d-block w-100" alt="...">
+				</div>
+				<div class="col-lg-4">
+					<img src="..." class="d-block w-100" alt="...">
+				</div>
+				<div class="col-lg-4">
+					<img src="..." class="d-block w-100" alt="...">
+				</div>
+				<div class="carousel-caption d-none d-md-block">
+				  <h5>First slide label</h5>
+				  <p>Some representative placeholder content for the first slide.</p>
+				</div>
+			  </div>
+			  <div class="carousel-item">
+				<div class="col-lg-4">
+					<img src="..." class="d-block w-100" alt="...">
+				</div>
+				<div class="col-lg-4">
+					<img src="..." class="d-block w-100" alt="...">
+				</div>
+				<div class="col-lg-4">
+					<img src="..." class="d-block w-100" alt="...">
+				</div>
+				<div class="carousel-caption d-none d-md-block">
+				  <h5>Second slide label</h5>
+				  <p>Some representative placeholder content for the second slide.</p>
+				</div>
+			  </div>
+			  <div class="carousel-item">
+				<div class="col-lg-4">
+					<img src="..." class="d-block w-100" alt="...">
+				</div>
+				<div class="col-lg-4">
+					<img src="..." class="d-block w-100" alt="...">
+				</div>
+				<div class="col-lg-4">
+					<img src="..." class="d-block w-100" alt="...">
+				</div>
+				
+				<div class="carousel-caption d-none d-md-block">
+				  <h5>Third slide label</h5>
+				  <p>Some representative placeholder content for the third slide.</p>
+				</div>
+			  </div>
+			</div>
+			<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+			  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+			  <span class="visually-hidden">Previous</span>
+			</button>
+			<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+			  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+			  <span class="visually-hidden">Next</span>
+			</button>
+		</div>
+		<!-- Add the me gusta btn -->
+<button class="button button-like">
+	<i class="fa fa-heart"></i>
+	<span>❤ Like  </span>
+</button>
+		<div id="carouselExampleCaptions" class="carousel slide">
+			<div class="carousel-indicators">
+			  <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+			  <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+			  <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+			</div>
+			<div class="carousel-inner">
+			  <div class="carousel-item active">
+				<div class="col-lg-4">
+					<img src="..." class="d-block w-100" alt="...">
+				</div>
+				<div class="col-lg-4">
+					<img src="..." class="d-block w-100" alt="...">
+				</div>
+				<div class="col-lg-4">
+					<img src="..." class="d-block w-100" alt="...">
+				</div>
+				<div class="carousel-caption d-none d-md-block">
+				  <h5>First slide label</h5>
+				  <p>Some representative placeholder content for the first slide.</p>
+				</div>
+			  </div>
+			  <div class="carousel-item">
+				<div class="col-lg-4">
+					<img src="..." class="d-block w-100" alt="...">
+				</div>
+				<div class="col-lg-4">
+					<img src="..." class="d-block w-100" alt="...">
+				</div>
+				<div class="col-lg-4">
+					<img src="..." class="d-block w-100" alt="...">
+				</div>
+				<div class="carousel-caption d-none d-md-block">
+				  <h5>Second slide label</h5>
+				  <p>Some representative placeholder content for the second slide.</p>
+				</div>
+			  </div>
+			  <div class="carousel-item">
+				<div class="col-lg-4">
+					<img src="..." class="d-block w-100" alt="...">
+				</div>
+				<div class="col-lg-4">
+					<img src="..." class="d-block w-100" alt="...">
+				</div>
+				<div class="col-lg-4">
+					<img src="..." class="d-block w-100" alt="...">
+				</div>
+				
+				<div class="carousel-caption d-none d-md-block">
+				  <h5>Third slide label</h5>
+				  <p>Some representative placeholder content for the third slide.</p>
+				</div>
+			  </div>
+			</div>
+			<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+			  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+			  <span class="visually-hidden">Previous</span>
+			</button>
+			<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+			  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+			  <span class="visually-hidden">Next</span>
+			</button>
+		  </div>
+
+    <!--search bar engine-->
+	<div class="searchEng">
+		
+		<div class="search-container">
+		  <form action="/action_page.php">
+			<input type="text" placeholder="Search.." name="search">
+			<button type="submit"><i class="fa fa-search"></i></button>
+		  </form>
+		</div>
+	</div>
+
+    <!--footer-->
+    <div class="container">
+        <footer class="py-3 my-4">
+            <!--footer link(s)-->
+            <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Home</a></li>
+            </ul>
+            <!--footer closing text-->
+            <p class="text-center text-muted fw-light">2023 Stylist.Ai</p>
+        </footer>
+    </div>
+
+</body>
+</html>
