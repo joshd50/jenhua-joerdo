@@ -15,16 +15,16 @@ This application generates outfit ideas with the help of AI (openAI). The user s
         when I visit the home page I am presented with a prompt entry for what I am looking for
         when I input my requests into the AI 
         then I am directed to a second page with input selectors based off of a specific item
-        when I select an option from one drop down input selector I am  then commiting my input
+        when I select an option from one drop down input selector I am  then committing my input
         then I am given options based off of the input selected
-        when I like an item from options then the liked items are saved into Local Storage for future refernce
+        when I like an item from options then the liked items are saved into Local Storage for future reference
         then I can go back and reference my liked choices in another page
 
     WIREFRAME: 
      ![opening page](./images/opening page.png)
      ![display results] (./images/cards displayed.png)
 
-    USER FLOW: user request to chat bot, directed to input selecting page, user slects from input (once selected: this is a commitment to that- or elese user will begin again), carousel page is then loaded with 3 options from the input selected, user picks 3 from selected, and if/when a user likes items they are saved into local storage, to then be displayed in a final page with all saved/liked items for future reference
+    USER FLOW: user request to chat bot, directed to input selecting page, user selects from input (once selected: this is a commitment to that- or else user will begin again), carousel page is then loaded with 3 options from the input selected, user picks 3 from selected, and if/when a user likes items they are saved into local storage, to then be displayed in a final page with all saved/liked items for future reference
 
     APIS: Open AI chat feature, Google data scrape
 
@@ -62,4 +62,4 @@ This application generates outfit ideas with the help of AI (openAI). The user s
 
 
     // from user prompt, send to gpt, gpt will send 3 results to gdata, and gdata will display 3 results from search, to then be //parsed into results page.
-    //anytime a result is liked, will be saved into local storage (for future refrence)
+    //anytime a result is liked, will be saved into local storage (for future reference)

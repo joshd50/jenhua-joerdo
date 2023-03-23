@@ -1,0 +1,348 @@
+/* Root */
+:root {
+    --gray: gray;
+    --lightGray: rgb(152, 152, 152); 
+    --darkGray: rgb(93, 93, 93);
+    --black: black;
+    --white: white; 
+}
+
+/* All Elements */
+* {
+    margin: 0;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Header */
+.site-header {
+    display: flex;
+    width: 100%;
+}
+
+.logo {
+    width: 5%;
+    margin-left: 1%;
+    font-size: 26px;
+    font-weight: bold;
+}
+
+.navBar {
+    width: 100vw;
+    margin-top: 7px;
+}
+
+.nav {
+    float: right;
+    color: var(--gray);
+    margin-right: 2%;
+    text-decoration: none;
+}
+
+.nav:link,
+.nav:visited {
+    color: var(--gray);
+}
+
+.nav:hover,
+.nav:active {
+    color: var(--black);
+    cursor: pointer;
+}
+
+form {
+    margin: 0 auto;
+}
+
+/* Submit */
+form button {
+    display: flex;
+    justify-content: center;
+    border: px solid var(--gray);
+    border-radius: 10px;
+    width: 10%;
+    min-width: 15vw;
+    padding: 1%;
+    margin: 0 auto 1%;
+    color: var(--white);
+    background-color: var(--darkGray);
+}
+
+form button:hover {
+    background-color: rgb(53, 53, 53);
+    cursor: pointer;
+}
+
+form button:active {
+    background-color: var(--lightGray);
+}
+
+/* Footer */
+footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 100px;
+    margin-bottom: 1%;
+}
+
+.footerLinks {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.footerLink {
+    margin-bottom: 0;
+    color: var(--gray);
+    text-decoration: none;
+}
+
+.footerWords {
+    display:block;
+    margin: 0 auto;
+    text-align: center;
+    color: var(--gray);
+}
+
+/* Carousel */
+/* Josh changing ids to classes */
+.carousel {
+    width: 80vw;
+    height: 80vh;
+    margin: 2vh auto;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.shirts,
+.pants,
+.shoes {
+ width: 75%;
+ height: 75%;
+ margin: 0 auto;
+ overflow: auto;
+}
+
+.shirtsRow,
+.pantsRow,
+.shoesRow { 
+    list-style: none;
+    padding-left: 5%;
+    padding-right: 5%;
+    display: flex;
+    flex-direction: row;
+    width: 60%;
+    height: 90%;
+    margin: 0 auto;
+
+}
+
+.shirtsRow li,
+.pantsRow li,
+.shoesRow li {
+    background-color: var(--white);
+    border-radius: 25px;
+    height: 85%;
+    width: 32%;
+    margin: 30px auto;
+    z-index: 0;
+    overflow: scroll;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 16px 50px 0 rgba(0, 0, 0, 0.5);
+}
+
+.shirtsRow li img,
+.pantsRow li img,
+.shoesRow li img{
+    width: 100%;
+    height: 100%;
+}
+
+.shirtsRow li div,
+.pantsRow li div,
+.shoesRow li div {
+    width: 70%;
+    text-align: center;
+    margin: 0 auto 2%;
+}
+
+.shirtsRow li:hover,
+.pantsRow li:hover,
+.shoesRow li:hover {
+    /* border: 2px solid rgba(49, 49, 49, 0.513); */
+    cursor: pointer;
+} 
+
+.shirtsRow li:active,
+.pantsRow li:active,
+.shoesRow li:active {
+    /* border: 2px solid rgba(49, 49, 49, 0.513); */
+    cursor: pointer;
+    scale: 1.1;
+    border: 2px solid rgba(12, 12, 12, 0.531);
+} 
+
+.mainShirts,
+.mainPants,
+.mainShoes {
+    flex-direction: column;
+    background-color: var(--white);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 16px 50px 0 rgba(0, 0, 0, 1.5);
+    border-radius: 25px;
+    height: 90%;
+    width: 35%;
+    margin: 2% auto;
+    z-index: 1;
+    transform: scale(1.2,1);
+    overflow: scroll;
+}
+
+.mainShirts img,
+.mainPants img,
+.mainShoes img {
+    width: 100%;
+    height: 100%;
+}
+
+.mainShirts div,
+.mainPants div,
+.mainShoes div {
+    width: 70%;
+    text-align: center;
+    margin: 0 auto 2%;
+}
+
+.mainShirts:hover,
+.mainPants:hover,
+.mainShoes:hover {
+    scale: 1.1;
+} 
+
+.carousel h3 {
+    display: block;
+    text-align: center;
+    margin: 2%;
+}
+
+/* Past Styles */
+#pastStyles {
+    border: 5px solid black;
+}
+
+#pastStyles h2 {
+    text-align: center;
+    font-size: 50px;
+    margin-top: 7vh;
+    border: 5px solid black;
+}
+
+#hanger {
+    border: 5px solid red;
+    display: flex;
+    flex-direction: row;
+    height: 75vh;
+    width: 75vw;
+    margin: 0 auto;
+}
+
+.outfit {
+    border: 5px solid gray;
+    border-radius: 25px;
+    list-style-type: none;
+    width: 5%;
+    background-color: white;
+}
+
+.outfit:hover {
+    transform: scale(3, 1)
+}
+
+/* Media Queries */
+@media screen  and  (max-width: 1200px) {
+    form button {
+        display: flex;
+        justify-content: center;
+        border: px solid var(--gray);
+        border-radius: 10px;
+        width: 20%;
+        height: 25%;
+        min-width: 15vw;
+        padding: 1%;
+        margin: 2% auto 3%;
+        color: var(--white);
+        background-color: var(--darkGray);
+    }
+    .shirtsRow,
+    .pantsRow,
+    .shoesRow { 
+        list-style: none;
+        padding-left: 5%;
+        padding-right: 5%;
+        display: flex;
+        flex-direction: row;
+        width: 95%;
+        height: 70%;
+        margin: 0 auto;
+        margin-bottom: 2vh;
+}
+
+.shirtsRow li div,
+.pantsRow li div,
+.shoesRow li div {
+    width: 70%;
+    text-align: center;
+    margin: 0 auto 2%;
+    font-size: 12px;
+}
+
+.mainShirts div,
+.mainPants div,
+.mainShoes div {
+    width: 70%;
+    text-align: center;
+    margin: 0 auto 2%;
+    font-size: 12px;
+}
+}
+/* 
+@media screen and (max-width: 1200px) {
+    .shirtsRow,
+    .pantsRow,
+    .shoesRow {
+        margin-left: 3vw;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .shirtsRow,
+    .pantsRow,
+    .shoesRow {
+        margin-left: -2vw;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .shirtsRow,
+    .pantsRow,
+    .shoesRow {
+        margin-left: -3vw;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .shirtsRow,
+    .pantsRow,
+    .shoesRow {
+        margin-left: -5vw;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .shirtsRow,
+    .pantsRow,
+    .shoesRow {
+        margin-left: -6vw;
+    }
+} */
