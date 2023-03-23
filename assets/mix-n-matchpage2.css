@@ -123,6 +123,7 @@ footer {
  width: 75%;
  height: 75%;
  margin: 0 auto;
+ overflow: auto;
 }
 
 .shirtsRow,
@@ -136,7 +137,7 @@ footer {
     width: 60%;
     height: 90%;
     margin: 0 auto;
-    margin-bottom: 2vh;
+
 }
 
 .shirtsRow li,
@@ -186,7 +187,7 @@ footer {
 .mainShirts,
 .mainPants,
 .mainShoes {
-    display: inline-flex;
+    flex-direction: column;
     background-color: var(--white);
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 16px 50px 0 rgba(0, 0, 0, 1.5);
     border-radius: 25px;
@@ -205,6 +206,14 @@ footer {
     height: 100%;
 }
 
+.mainShirts div,
+.mainPants div,
+.mainShoes div {
+    width: 70%;
+    text-align: center;
+    margin: 0 auto 2%;
+}
+
 .mainShirts:hover,
 .mainPants:hover,
 .mainShoes:hover {
@@ -215,6 +224,39 @@ footer {
     display: block;
     text-align: center;
     margin: 2%;
+}
+
+/* Past Styles */
+#pastStyles {
+    border: 5px solid black;
+}
+
+#pastStyles h2 {
+    text-align: center;
+    font-size: 50px;
+    margin-top: 7vh;
+    border: 5px solid black;
+}
+
+#hanger {
+    border: 5px solid red;
+    display: flex;
+    flex-direction: row;
+    height: 75vh;
+    width: 75vw;
+    margin: 0 auto;
+}
+
+.outfit {
+    border: 5px solid gray;
+    border-radius: 25px;
+    list-style-type: none;
+    width: 5%;
+    background-color: white;
+}
+
+.outfit:hover {
+    transform: scale(3, 1)
 }
 
 /* Media Queries */
@@ -244,6 +286,24 @@ footer {
         height: 70%;
         margin: 0 auto;
         margin-bottom: 2vh;
+}
+
+.shirtsRow li div,
+.pantsRow li div,
+.shoesRow li div {
+    width: 70%;
+    text-align: center;
+    margin: 0 auto 2%;
+    font-size: 12px;
+}
+
+.mainShirts div,
+.mainPants div,
+.mainShoes div {
+    width: 70%;
+    text-align: center;
+    margin: 0 auto 2%;
+    font-size: 12px;
 }
 }
 /* 

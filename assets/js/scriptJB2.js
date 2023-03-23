@@ -1462,7 +1462,7 @@ function renderBottom (bottomData) {
 		var bottomPrice = bottomData.shopping_results[i].price;
 		var bottomSource = bottomData.shopping_results[i].source;
 
-		var currentCard = $('#bottomCont').find('#card' + i);
+		var currentCard = $('#bottomCont').find(`#card${i -  bottomIndex}`);
 		// console.log(currentCard);
 
 		currentCard.find('img').attr('src',bottomImage);
@@ -1481,7 +1481,7 @@ function renderShoe (shoeData) {
 		var shoePrice = shoeData.shopping_results[i].price;
 		var shoeSource = shoeData.shopping_results[i].source;
 
-		var currentCard = $('#shoeCont').find('#card' + i);
+		var currentCard = $('#shoeCont').find(`#card${i - shoeIndex}`);
 		// console.log(currentCard);
 
 		currentCard.find('img').attr('src',shoeImage);
