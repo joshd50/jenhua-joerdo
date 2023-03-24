@@ -52,9 +52,9 @@
 /* Carousel */
 /* Josh changing ids to classes */
 .carousel {
-    width: 80vw;
-    height: 80vh;
-    margin: 2vh auto;
+    width: 90vw;
+    height: 90vh;
+    margin: 0 auto 0.5%;
     display: flex;
     flex-direction: column;
 }
@@ -64,7 +64,7 @@
 .pants,
 .shoes {
  width: 75%;
- height: 75%;
+ height: 85%;
  margin: 0 auto;
  overflow: auto;
 }
@@ -77,8 +77,8 @@
     padding-right: 5%;
     display: flex;
     flex-direction: row;
-    width: 60%;
-    height: 90%;
+    width: 70%;
+    height: 100%;
     margin: 0 auto;
 
 }
@@ -210,13 +210,12 @@ form {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-    border: 5px solid black;
     width: 75vw;
     height: 5vh;
 }
 
 form h3 {
-    border: 5px solid black;
+    padding-top: 12px;
     display: block;
     font-size: 12px;
     width: 20%;
@@ -230,6 +229,7 @@ form button {
     height: 100%;
     color: var(--white);
     background-color: var(--darkGray);
+    padding-top: 12px;
 }
 
 form button:hover {
@@ -314,19 +314,6 @@ footer {
 
 /* Media Queries */
 @media screen  and  (max-width: 1200px) {
-    form button {
-        display: flex;
-        justify-content: center;
-        border: px solid var(--gray);
-        border-radius: 10px;
-        width: 20%;
-        height: 25%;
-        min-width: 15vw;
-        padding: 1%;
-        margin: 2% auto 3%;
-        color: var(--white);
-        background-color: var(--darkGray);
-    }
     .shirtsRow,
     .pantsRow,
     .shoesRow { 
@@ -369,7 +356,17 @@ footer {
         height: 56%;
         margin: 0.5% auto 2%;
         background-color: white;
-    }      
+    }    
+    form button {
+        display: flex;
+        justify-content: center;
+        border-radius: 10px;
+        width: 20%;
+        height: 100%;
+        font-size: 4px;
+        color: var(--white);
+        background-color: var(--darkGray);
+    }  
 }
 /* 
 @media screen and (max-width: 1200px) {
