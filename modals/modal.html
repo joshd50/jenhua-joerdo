@@ -59,7 +59,7 @@
                     <option value="3">Three Items</option>
                 </select>
                 <!--submit button-->
-                <button type="submit" class="btn" onclick="openModal()">Submit</button>
+                <button type="submit" class="btn" onclick="openModal(event)">Submit</button>
                     <div class="modal" id="modal">
                         <h2>Ooops!</h2>
                         <p>Seems life you forgot to input a selection! </p>
@@ -68,12 +68,22 @@
             </form>
             <!--form end-->
         </div>
+        <form>
+            <button type="submit" onclick="test(event)">octopus toes</button>
+        </form>
     </div>
 
     <script>
         let modal = document.getElementById("modal");
 
-        function openModal(){
+        function test(event){
+            event.preventDefault()
+            console.table(event)
+        }
+
+        function openModal(event){
+            event.preventDefault()
+            console.log("clicked")
             modal.classList.add("open-modal")
         }
         function closeModal(){
