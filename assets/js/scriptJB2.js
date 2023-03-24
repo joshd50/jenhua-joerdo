@@ -1446,7 +1446,7 @@ function renderTop (topData) {
 		// console.log(currentCard);
 
 			// class .overlay
-		currentCard.find('img').attr('src',topImage);
+		currentCard.find('.shirts').attr('src',topImage);
 		currentCard.find('h5').text(topSource);
 		currentCard.find('p.first').text(topTitle);
 		currentCard.find('p.second').text(topPrice);
@@ -1465,7 +1465,7 @@ function renderBottom (bottomData) {
 		var currentCard = $('#bottomCont').find(`#card${i -  bottomIndex}`);
 		// console.log(currentCard);
 
-		currentCard.find('img').attr('src',bottomImage);
+		currentCard.find('.pants').attr('src',bottomImage);
 		currentCard.find('h5').text(bottomSource);
 		currentCard.find('p.first').text(bottomTitle);
 		currentCard.find('p.second').text(bottomPrice);
@@ -1484,7 +1484,7 @@ function renderShoe (shoeData) {
 		var currentCard = $('#shoeCont').find(`#card${i - shoeIndex}`);
 		// console.log(currentCard);
 
-		currentCard.find('img').attr('src',shoeImage);
+		currentCard.find('.shoes').attr('src',shoeImage);
 		currentCard.find('h5').text(shoeSource);
 		currentCard.find('p.first').text(shoeTitle);
 		currentCard.find('p.second').text(shoePrice);
@@ -1530,4 +1530,16 @@ renderBottom(myData);
 renderShoe(myData);
 renderTop(myData);
 
+// Save Style
 
+function saveStyle(event) {
+    event.preventDefault();
+    var hanger = document.querySelector("#hanger");
+    var shirtsImage = document.querySelector("#mainShirtsImage");
+    var pantsImage = document.querySelector("#mainPantsImage");
+    var shoesImage = document.querySelector("#mainShoesImage");
+    hanger.innerHTML += `<li class="outfit">${shirtsImage}</li>`;
+};
+
+var saveButton = document.querySelector("#saveDesign");
+saveButton.addEventListener('click', saveStyle);
