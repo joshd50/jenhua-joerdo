@@ -1,9 +1,15 @@
+var aiResponse
+//var apiKey = "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"
 
-function OpenaiFetchAPI() {
+
+function OpenaiFetchAPI(userInput,value) {
   console.log("Calling GPT3");
   var url = "https://api.openai.com/v1/completions";
   var bearer =
-    "Bearer " + "API_KEY";
+    "Bearer " + apiKey;
+
+    var prmpt = "You are a fashion expert. Please create a 3 piece outfit (15 words max) for a" + value + "who needs" + userInput +". The items generated should include a random list of tops, bottoms, shoes, or accessories. Please limit details, only output the items generated, and do not reference their gender."
+
   fetch(url, {
     method: "POST",
     headers: {
@@ -12,7 +18,7 @@ function OpenaiFetchAPI() {
     },
     body: JSON.stringify({
         model: 'text-davinci-003',
-      prompt: "Please create a 3 piece outfit (15 words max) for a person who needs a new look. The items generated should include a random list of tops, bottoms, shoes, or accessories. Please limit details, only output the items generated, and do not refrence their gender.", // THIS IS WHERE PROMPT WILL GO
+      prompt: prmpt, // THIS IS WHERE PROMPT WILL GO
       max_tokens: 100,
       temperature: 1,
     }),
@@ -21,10 +27,13 @@ function OpenaiFetchAPI() {
       return response.json();
     })
     .then((data) => {
-      console.log(data);
-      console.log(typeof data);
-      console.log(Object.keys(data));
+
       console.log(data["choices"][0].text);
+      aiResponse = data["choices"][0].text
+//save reponse to local storage
+      localStorage.setItem('data',aiResponse);
+      window.location.assign("../displayJB2.html")
+      
     })
     .catch((error) => {
       console.log("Something bad happened " + error);
@@ -70,15 +79,41 @@ function renderOutput(data) {
 function submitPrompt(event) {
   event.preventDefault();
   var userInput = document.getElementById("floatingInputValue").value;
-  console.log(userInput)
+  // console.log(userInput)
   var e = document.getElementById("gender");
   var value = e.value;
-  var text = e.options[e.selectedIndex].text; 
-  console.log(value)
-  console.log(text)
-  };
+  // console.log(value)
 
+  var simpleModal = document.getElementById('simpleModal');
+  var modalBtn = document.getElementById('modalBtn');
+  var closeBtn = document.getElementsByClassName('closeBtn')[0];
 
+  modalBtn.addEventListener('click', openModal);
+  closeBtn.addEventListener('click', closeModal);
+  window.addEventListener('click', clickOutside);
+
+  function openModal() {
+    simpleModal.style.display = 'block';
+  }
+
+  function closeModal() {
+    simpleModal.style.display = 'none';
+  }
+
+  function clickOutside(e) {
+    if (e.target == simpleModal) {
+      simpleModal.style.display = 'none';
+    }
+  }
+  if (userInput === "" || userInput.length < 5) {
+    var modalContent = document.getElementById("errorDisplay");
+    modalContent.textContent += "Please add more than 5 characters to your input."; // ADDS TEXT TO P IN MODAL
+    openModal(); // OPENS MODAL IF INPUT IS NULL
+  } else {
+    OpenaiFetchAPI(userInput, value);
+    closeModal(); // HIDES MODAL ONCE SUBMISSION IS COMPLETE
+  }
+}
 
 
 var form = document.getElementById('form')
@@ -86,4 +121,3 @@ form.addEventListener("submit", submitPrompt);
 
 
 // submitPrompt();
-

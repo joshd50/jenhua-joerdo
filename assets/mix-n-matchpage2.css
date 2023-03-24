@@ -411,3 +411,16 @@ footer {
         margin-left: -6vw;
     }
 } */
+
+        .loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: aliceblue;
+            transition: opacity 0.75s, visibilty 0.75s;
+        }

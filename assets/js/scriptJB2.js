@@ -5,7 +5,7 @@ var topIndex = 0;
 var bottomIndex = 3;
 var shoeIndex = 6;
 
-var myData = {
+var object = {
     "search_information": {
         "query_displayed": "white shirt"
     },
@@ -1327,32 +1327,24 @@ var myData = {
             }
         ]
     }
-}
-
-// this will be erased once back online
-var topText = "white linen shirt mens";
-var bottomText = "white shorts mens";
-var shoeText = "boat shoes mens";
-
-
-
+};
 
 const options = {
 	method: 'GET',
 	headers: {
-		'X-RapidAPI-Key': 'a30f9d1a37msh5cc175700f93f6fp1094cbjsn5d64306f2e3d',
+		//'X-RapidAPI-Key': 'RAPID API KEY',
 		'X-RapidAPI-Host': 'google-data-scraper.p.rapidapi.com'
 	}
 };
 
 var gdataBaseUrl = 'https://google-data-scraper.p.rapidapi.com/search/shop/';
-var gdataKey = '?api_key=1cbefa30f9ed00f3afb422efeda5fd3b';
+//var gdataKey = 'APIKEY';
 
 
 function fetchTopSearch (topSearch) {
 	topSearch = topSearch.split(' ');
 	topSearch = topSearch.join('+');
-	console.log(gdataBaseUrl + topSearch + gdataKey);
+	// console.log(gdataBaseUrl + topSearch + gdataKey);
     fetch(gdataBaseUrl + topSearch + gdataKey, options)
         .then(function(response) {
             if (!response.ok) {
@@ -1363,7 +1355,7 @@ function fetchTopSearch (topSearch) {
         .then(function(data) {
             // handle the response data
 
-			console.log(data)
+			// console.log(data)
             renderTop(data);
         })
         .catch(function(error) {
@@ -1381,10 +1373,10 @@ function fetchTopSearch (topSearch) {
 // 	.catch(err => console.error(err));
 // }
 
-function fetchBottomSearch () {
+function fetchBottomSearch (bottomSearch) {
 bottomSearch = bottomSearch.split(' ');
 	bottomSearch = bottomSearch.join('+');
-	console.log(gdataBaseUrl + bottomSearch + gdataKey);
+	// console.log(gdataBaseUrl + bottomSearch + gdataKey);
     fetch(gdataBaseUrl + bottomSearch + gdataKey, options)
         .then(function(response) {
             if (!response.ok) {
@@ -1395,7 +1387,7 @@ bottomSearch = bottomSearch.split(' ');
         .then(function(data) {
             // handle the response data
 
-			console.log(data)
+			// console.log(data)
             renderBottom(data);
         })
         .catch(function(error) {
@@ -1409,7 +1401,7 @@ bottomSearch = bottomSearch.split(' ');
 	function fetchShoeSearch (shoeSearch) {
 		shoeSearch = shoeSearch.split(' ');
 	shoeSearch = shoeSearch.join('+');
-	console.log(gdataBaseUrl + shoeSearch + gdataKey);
+	// console.log(gdataBaseUrl + shoeSearch + gdataKey);
     fetch(gdataBaseUrl + shoeSearch + gdataKey, options)
         .then(function(response) {
             if (!response.ok) {
@@ -1420,7 +1412,7 @@ bottomSearch = bottomSearch.split(' ');
         .then(function(data) {
             // handle the response data
 
-			console.log(data)
+			// console.log(data)
             renderShoe(data);
         })
         .catch(function(error) {
@@ -1435,7 +1427,7 @@ bottomSearch = bottomSearch.split(' ');
 
 function renderTop (topData) {
 	for (var i = topIndex; i < topIndex + 3; i++) {
-        console.log(topData.shopping_results[i])
+        // console.log(topData.shopping_results[i])
 		var topImage = topData.shopping_results[i].thumbnail;
 		var topTitle = topData.shopping_results[i].title;
 		var topLink = topData.shopping_results[i].link;
@@ -1450,12 +1442,16 @@ function renderTop (topData) {
 		currentCard.find('h5').text(topSource);
 		currentCard.find('p.first').text(topTitle);
 		currentCard.find('p.second').text(topPrice);
+        if (currentCard.hasClass("main")) {
+            console.log(currentCard)
+            currentCard.find('a').attr("href", topLink);
+        } 
 	}
 }
 
 function renderBottom (bottomData) {
 	for (var i = bottomIndex; i < bottomIndex + 3; i++) {
-        console.log(bottomData.shopping_results[i])
+        // console.log(bottomData.shopping_results[i])
 		var bottomImage = bottomData.shopping_results[i].thumbnail;
 		var bottomTitle = bottomData.shopping_results[i].title;
 		var bottomLink = bottomData.shopping_results[i].link;
@@ -1469,12 +1465,16 @@ function renderBottom (bottomData) {
 		currentCard.find('h5').text(bottomSource);
 		currentCard.find('p.first').text(bottomTitle);
 		currentCard.find('p.second').text(bottomPrice);
+        if (currentCard.hasClass("main")) {
+            console.log(currentCard)
+            currentCard.find('a').attr("href", bottomLink);
+        }
 	}
 }
 
 function renderShoe (shoeData) {
 	for (var i = shoeIndex; i < shoeIndex + 3; i++) {
-        console.log(shoeData.shopping_results[i])
+        // console.log(shoeData.shopping_results[i])
 		var shoeImage = shoeData.shopping_results[i].thumbnail;
 		var shoeTitle = shoeData.shopping_results[i].title;
 		var shoeLink = shoeData.shopping_results[i].link;
@@ -1488,6 +1488,10 @@ function renderShoe (shoeData) {
 		currentCard.find('h5').text(shoeSource);
 		currentCard.find('p.first').text(shoeTitle);
 		currentCard.find('p.second').text(shoePrice);
+        if (currentCard.hasClass("main")) {
+            console.log(currentCard)
+            currentCard.find('a').attr("href", shoeLink);
+        }
 	}
 }
 
@@ -1499,47 +1503,28 @@ function renderShoe (shoeData) {
 
 
 
-
-
-// function logSubmit(event) {
-// 	event.preventDefault();
-// 	const topInput = document.getElementById("top-input");
-// 	const bottomInput = document.getElementById("bottom-input");
-// 	const shoeInput = document.getElementById("shoe-input");
-// 	const topText = topInput.value;
-// 	const bottomText = bottomInput.value;
-// 	const shoeText = shoeInput.value;
-// 	fetchTopSearch(topText);
-// 	fetchBottomSearch(bottomText);
-// 	fetchShoeSearch(shoeText);
-
-// }
-
-// const form = document.getElementById("form");
-// const log = document.getElementById("log");
-// form.addEventListener("submit", logSubmit);
-
-
 	// fetchTopSearch(topText);
 	// fetchBottomSearch(bottomText);
 	// fetchShoeSearch(shoeText);
 
 // console.log(topData.filtered_results)
 
-renderBottom(myData);
-renderShoe(myData);
-renderTop(myData);
+function pullAIdata(){
+    var rawData = localStorage.getItem('data');
+    // if (rawData = null) {
+    //     return
+    // } else {
+        console.log(rawData);
+        var entries =  rawData.split(",");
+        fetchTopSearch(entries[0]);
+        fetchBottomSearch(entries[1]);
+        fetchShoeSearch(entries[2]);
+    // }
+}
 
-// Save Style
+// pullAIdata();
 
-function saveStyle(event) {
-    event.preventDefault();
-    var hanger = document.querySelector("#hanger");
-    var shirtsImage = document.querySelector("#mainShirtsImage");
-    var pantsImage = document.querySelector("#mainPantsImage");
-    var shoesImage = document.querySelector("#mainShoesImage");
-    hanger.innerHTML += `<li class="outfit">${shirtsImage}</li>`;
-};
+renderBottom(object);
+renderShoe(object);
+renderTop(object);
 
-var saveButton = document.querySelector("#saveDesign");
-saveButton.addEventListener('click', saveStyle);
