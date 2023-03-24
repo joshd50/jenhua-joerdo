@@ -5,6 +5,8 @@ var topIndex = 0;
 var bottomIndex = 3;
 var shoeIndex = 6;
 
+
+
 var object = {
     "search_information": {
         "query_displayed": "white shirt"
@@ -1356,6 +1358,7 @@ function fetchTopSearch (topSearch) {
             // handle the response data
 
 			// console.log(data)
+            localStorage.setItem('topData', JSON.stringify(data));
             renderTop(data);
         })
         .catch(function(error) {
@@ -1388,6 +1391,7 @@ bottomSearch = bottomSearch.split(' ');
             // handle the response data
 
 			// console.log(data)
+            localStorage.setItem('bottomData', JSON.stringify(data));
             renderBottom(data);
         })
         .catch(function(error) {
@@ -1413,6 +1417,7 @@ bottomSearch = bottomSearch.split(' ');
             // handle the response data
 
 			// console.log(data)
+            localStorage.setItem('shoeData', JSON.stringify(data));
             renderShoe(data);
         })
         .catch(function(error) {
@@ -1434,7 +1439,7 @@ function renderTop (topData) {
 		var topPrice = topData.shopping_results[i].price;
 		var topSource = topData.shopping_results[i].source;
 
-		var currentCard = $('#topCont').find('#card' + i);
+		var currentCard = $('#topCont').find(`#card${i -  topIndex}`);
 		// console.log(currentCard);
 
 			// class .overlay
@@ -1443,7 +1448,6 @@ function renderTop (topData) {
 		currentCard.find('p.first').text(topTitle);
 		currentCard.find('p.second').text(topPrice);
         if (currentCard.hasClass("main")) {
-            console.log(currentCard)
             currentCard.find('a').attr("href", topLink);
         } 
 	}
@@ -1466,7 +1470,6 @@ function renderBottom (bottomData) {
 		currentCard.find('p.first').text(bottomTitle);
 		currentCard.find('p.second').text(bottomPrice);
         if (currentCard.hasClass("main")) {
-            console.log(currentCard)
             currentCard.find('a').attr("href", bottomLink);
         }
 	}
@@ -1489,7 +1492,6 @@ function renderShoe (shoeData) {
 		currentCard.find('p.first').text(shoeTitle);
 		currentCard.find('p.second').text(shoePrice);
         if (currentCard.hasClass("main")) {
-            console.log(currentCard)
             currentCard.find('a').attr("href", shoeLink);
         }
 	}
@@ -1523,8 +1525,59 @@ function pullAIdata(){
 }
 
 // pullAIdata();
+localStorage.setItem('topData', JSON.stringify(object));
+localStorage.setItem('bottomData', JSON.stringify(object));
+localStorage.setItem('shoeData', JSON.stringify(object));
 
 renderBottom(object);
 renderShoe(object);
 renderTop(object);
+console.log(object)
 
+$('.rightShirts').click(function(){
+    topIndex++;
+    var topData = JSON.parse(localStorage.getItem('topData'))
+    renderTop(topData);
+})
+
+$('.leftShirts').click(function(){
+    if (topIndex === 0) {
+        return
+    } else {
+        topIndex--;
+        var topData = JSON.parse(localStorage.getItem('topData'))
+        renderTop(topData);
+    }
+})
+
+$('.rightPants').click(function(){
+    bottomIndex++;
+    var bottomData = JSON.parse(localStorage.getItem('bottomData'))
+    renderBottom(bottomData);
+})
+
+$('.leftPants').click(function(){
+    if (bottomIndex === 0) {
+        return
+    } else {
+        bottomIndex--;
+        var bottomData = JSON.parse(localStorage.getItem('bottomData'))
+        renderTop(bottomData);
+    }
+})
+
+$('.rightShoes').click(function(){
+    shoeIndex++;
+    var shoeData = JSON.parse(localStorage.getItem('shoeData'))
+    renderBottom(shoeData);
+})
+
+$('.leftShoes').click(function(){
+    if (shoeIndex === 0) {
+        return
+    } else {
+        shoeIndex--;
+        var shoeData = JSON.parse(localStorage.getItem('shoeData'))
+        renderTop(shoeData);
+    }
+})
