@@ -5,3 +5,19 @@
 "Please create a 3 piece outfit (15 words max) for a gender neutral person who needs a new look. The items generated should include a random list of tops, bottoms, shoes, or accessories. Please limit details, only output the items generated, and do not refrence their gender."
 
 var for user [];
+
+
+Calling GPT3
+aiscript.js:23 {id: 'cmpl-6xKGY9K13ufrr3tzdh5HHuQJYpSZ1', object: 'text_completion', created: 1679597274, model: 'text-davinci-003', choices: Array(1), …}
+aiscript.js:24 object
+aiscript.js:25 (6) ['id', 'object', 'created', 'model', 'choices', 'usage']
+aiscript.js:26 
+
+Leather Jacket, Jeans, Loafers.
+
+
+// var selectedOption = userSelected.value;
+  // if (selection > 0 && selectedOption !== "") {
+  //   console.log(`Selected option: ${selectedOption}, selected text: ${selection}`);
+    // fetchOutput(userInput, userSelection);
+  // };
