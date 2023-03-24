@@ -1,76 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!--place css style sheet link here-->
     <link rel="stylesheet" href="../assets/openingpage.css" />
     <title>Stylist.Ai</title>
-  </head>
+</head>
 
-  <!--site body-->
+<!--site body-->
 
-  <body>
+<body>
     <!--header-->
     <header class="site-header">
-      <!--logo-->
-      <div class="logo" href="#" aria-label="Company">Stylist.Ai</div>
-      <!--navbar-->
-      <nav class="navBar">
+    <!--logo-->
+        <div class="logo" href="#" aria-label="Company">Stylist.Ai</div>
+        <!--navbar-->
+        <nav class="navBar">
         <!--nav links-->
-        <a class="nav" href="#">Home</a>
-        <a class="nav" href="#">Past Styles</a>
-        <a class="nav" href="#">Outfit</a>
-        <a class="nav" href="#">Shopping</a>
-      </nav>
+            <a class="nav" href="#">Home</a>
+            <a class="nav" href="#">Past Styles</a>
+            <a class="nav" href="#">Outfit</a>
+            <a class="nav" href="#">Shopping</a>
+        </nav>
     </header>
     <!--hero-->
     <div class="hero">
-      <!--hero header-->
-      <div class="heroHeader">
-        <h1>Stylist.Ai</h1>
-      </div>
-      <div class="product-device shadow-sm d-none d-md-block"></div>
-      <div
+        <!--hero header-->
+        <div class="heroHeader">
+            <h1>Stylist.Ai</h1>
+        </div>
+    <div class="product-device shadow-sm d-none d-md-block"></div>
+        <div
         class="product-device product-device-2 shadow-sm d-none d-md-block"
-      ></div>
+        ></div>
     </div>
     <!--new div container for form-->
     <div class="formContainer">
-      <div class="form">
+        <div class="form">
         <!--form-->
         <form id="form">
-          <!--user input-->
-          <div class="formOutfit">
-            <input
-              type="user-input"
-              class="formOutfitInput"
-              id="floatingInputValue"
-              placeholder="Enter a prompt with a maximum character length of 60"
-            /><!--"blank" value is where user will input request-->
-            <label for="floatingInputValue">I would like an outfit for</label>
-            <!--header for input-->
-          </div>
-          <!--select drop down-->
-          <select
+            <!--user input-->
+            <div class="formOutfit">
+                <input
+                    type="user-input"
+                    class="formOutfitInput"
+                    id="floatingInputValue"
+                    placeholder="Enter a prompt with a maximum character length of 60"
+                    /><!--"blank" value is where user will input request-->
+                <label for="floatingInputValue">I would like an outfit for</label>
+                <!--header for input-->
+            </div>
+        <!--select drop down-->
+        <select
             id="gender"
             class="formSelect"
             aria-label="Default select example"
             required
-          >
+        >
             <option value="" disabled selected>select gender</option>
             <option value="Male">Male</option>
             <option value="Female">Female</option>
             <option value="Gender Neutral">Gender Neutral</option>
-          </select>
-          <!--submit button-->
-          <!-- <input id="homebutton" type="submit" value="Submit"> -->
-          <button href="#">Submit</button>
+        </select>
+        <!--submit button-->
+        <!-- <input id="homebutton" type="submit" value="Submit"> -->
+        <button href="#">Submit</button>
 
-          <!--modal-->
+            <!--modal-->
 
-          <div id="simpleModal" class="modal2" hidden>
+        <div id="simpleModal" class="modal2" hidden>
             <div class="modal-content">
               <span class="closeBtn">Ooops!</span>
               <p id="errorDisplay"><!--text input here--></p>
