@@ -10,13 +10,13 @@ var shoeIndex = 0;
 const options = {
 	method: 'GET',
 	headers: {
-		'X-RapidAPI-Key': 'a30f9d1a37msh5cc175700f93f6fp1094cbjsn5d64306f2e3d',
+		//'X-RapidAPI-Key': 'RAPID API KEY',
 		'X-RapidAPI-Host': 'google-data-scraper.p.rapidapi.com'
 	}
 };
 
 var gdataBaseUrl = 'https://google-data-scraper.p.rapidapi.com/search/shop/';
-var gdataKey = '?api_key=1cbefa30f9ed00f3afb422efeda5fd3b';
+//var gdataKey = 'APIKEY';
 
 
 function fetchTopSearch (topSearch) {

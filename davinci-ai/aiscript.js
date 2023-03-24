@@ -1,5 +1,5 @@
 var aiResponse
-var apiKey = ""
+var apiKey = "API KEY"
 
 
 function OpenaiFetchAPI(userInput,value) {
@@ -84,18 +84,36 @@ function submitPrompt(event) {
   var value = e.value;
   // console.log(value)
 
+  var simpleModal = document.getElementById('simpleModal');
+  var modalBtn = document.getElementById('modalBtn');
+  var closeBtn = document.getElementsByClassName('closeBtn')[0];
 
-  // modal will replace the window alert
-  if (userInput === "") { 
-    alert('empty message')
+  modalBtn.addEventListener('click', openModal);
+  closeBtn.addEventListener('click', closeModal);
+  window.addEventListener('click', clickOutside);
 
-  } else if (userInput.length < 5 ) { 
-    alert('empty message')
+  function openModal() {
+    simpleModal.style.display = 'block';
+  }
 
+  function closeModal() {
+    simpleModal.style.display = 'none';
+  }
+
+  function clickOutside(e) {
+    if (e.target == simpleModal) {
+      simpleModal.style.display = 'none';
+    }
+  }
+  if (userInput === "" || userInput.length < 5) {
+    var modalContent = document.getElementById("errorDisplay");
+    modalContent.textContent += "Please add more than 5 characters to your input."; // ADDS TEXT TO P IN MODAL
+    openModal(); // OPENS MODAL IF INPUT IS NULL
   } else {
-    OpenaiFetchAPI (userInput,value)}
+    OpenaiFetchAPI(userInput, value);
+    closeModal(); // HIDES MODAL ONCE SUBMISSION IS COMPLETE
+  }
 }
-
 
 
 var form = document.getElementById('form')
