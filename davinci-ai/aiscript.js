@@ -109,7 +109,8 @@ function submitPrompt(event) {
     var modalContent = document.getElementById("errorDisplay");
     modalContent.textContent += "Please add more than 5 characters to your input."; // ADDS TEXT TO P IN MODAL
     openModal(); // OPENS MODAL IF INPUT IS NULL
-  } else {
+  } 
+  else {
     OpenaiFetchAPI(userInput, value);
     closeModal(); // HIDES MODAL ONCE SUBMISSION IS COMPLETE
   }
