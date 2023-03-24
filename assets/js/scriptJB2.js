@@ -1438,7 +1438,7 @@ function renderTop (topData) {
 		// console.log(currentCard);
 
 			// class .overlay
-		currentCard.find('img').attr('src',topImage);
+		currentCard.find('.shirts').attr('src',topImage);
 		currentCard.find('h5').text(topSource);
 		currentCard.find('p.first').text(topTitle);
 		currentCard.find('p.second').text(topPrice);
@@ -1461,7 +1461,7 @@ function renderBottom (bottomData) {
 		var currentCard = $('#bottomCont').find(`#card${i -  bottomIndex}`);
 		// console.log(currentCard);
 
-		currentCard.find('img').attr('src',bottomImage);
+		currentCard.find('.pants').attr('src',bottomImage);
 		currentCard.find('h5').text(bottomSource);
 		currentCard.find('p.first').text(bottomTitle);
 		currentCard.find('p.second').text(bottomPrice);
@@ -1484,7 +1484,7 @@ function renderShoe (shoeData) {
 		var currentCard = $('#shoeCont').find(`#card${i - shoeIndex}`);
 		// console.log(currentCard);
 
-		currentCard.find('img').attr('src',shoeImage);
+		currentCard.find('.shoes').attr('src',shoeImage);
 		currentCard.find('h5').text(shoeSource);
 		currentCard.find('p.first').text(shoeTitle);
 		currentCard.find('p.second').text(shoePrice);
@@ -1527,3 +1527,4 @@ function pullAIdata(){
 renderBottom(object);
 renderShoe(object);
 renderTop(object);
+
