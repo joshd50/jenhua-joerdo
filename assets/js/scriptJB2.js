@@ -5,6 +5,10 @@ var topIndex = 0;
 var bottomIndex = 3;
 var shoeIndex = 6;
 
+let topSavedStyles = [];
+let bottomSavedStyles = [];
+let shoeSavedStyles = [];
+
 
 
 var object = {
@@ -1416,7 +1420,7 @@ bottomSearch = bottomSearch.split(' ');
         .then(function(data) {
             // handle the response data
 
-			// console.log(data)
+			console.log(data)
             localStorage.setItem('shoeData', JSON.stringify(data));
             renderShoe(data);
         })
@@ -1523,8 +1527,10 @@ function pullAIdata(){
         fetchShoeSearch(entries[2]);
     // }
 }
-
+// turn on when switching to live
 // pullAIdata();
+
+// turn off when switching to live
 localStorage.setItem('topData', JSON.stringify(object));
 localStorage.setItem('bottomData', JSON.stringify(object));
 localStorage.setItem('shoeData', JSON.stringify(object));
@@ -1541,16 +1547,16 @@ $('.rightShirts').click(function(){
 })
 
 $('.leftShirts').click(function(){
-    if (topIndex === 0) {
-        return
-    } else {
-        topIndex--;
         var topData = JSON.parse(localStorage.getItem('topData'))
-        renderTop(topData);
-    }
+        var tempData = topData.shopping_results.pop()
+        topData.shopping_results.unshift(tempData)
+        localStorage.setItem('topData',JSON.stringify(topData))
+        console.log(topData)
+        renderTop(topData)
 })
 
 $('.rightPants').click(function(){
+    // shift then push
     bottomIndex++;
     var bottomData = JSON.parse(localStorage.getItem('bottomData'))
     renderBottom(bottomData);
@@ -1581,3 +1587,31 @@ $('.leftShoes').click(function(){
         renderTop(shoeData);
     }
 })
+
+
+$('#saveDesign').click(function() {
+  // Find the main shirt card and get its information
+  var mainShirtCard = $('#mainShirts').children().first();
+  var mainShirtImage = mainShirtCard.find('.shirts').attr('src');
+  var mainShirtTitle = mainShirtCard.find('p.first').text();
+  var mainShirtLink = mainShirtCard.find('a').attr('href');
+  var mainShirtPrice = mainShirtCard.find('p.second').text();
+  var mainShirtSource = mainShirtCard.find('h5').text();
+
+  // Create an object with the main shirt information
+  var mainShirtObject = {
+    image: mainShirtImage,
+    title: mainShirtTitle,
+    link: mainShirtLink,
+    price: mainShirtPrice,
+    source: mainShirtSource
+  };
+
+  // Add the main shirt object to the saved styles array
+  topSavedStyles.push(mainShirtObject);
+
+  // Save the saved styles array to local storage
+  localStorage.setItem("topSavedStyles", JSON.stringify(topSavedStyles));
+
+  
+});
