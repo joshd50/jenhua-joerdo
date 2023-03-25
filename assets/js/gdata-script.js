@@ -13,7 +13,7 @@ const options = {
 };
 
 var gdataBaseUrl = 'https://google-data-scraper.p.rapidapi.com/search/shop/'
-var gdataKey = '?api_key=df348526659d1cf482a2be9ac2585f76'
+var gdataKey = '?api_key=API_KEY'
 
 
   

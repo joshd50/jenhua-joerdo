@@ -1,5 +1,5 @@
 var aiResponse
-var apiKey = "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"
+var apiKey = "APIKEY"
 
 
 function OpenaiFetchAPI(userInput,value) {
