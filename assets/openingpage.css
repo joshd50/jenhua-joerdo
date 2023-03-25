@@ -1,10 +1,10 @@
 /* Root */
 :root {
-    --gray: gray;
-    --lightGray: rgb(152, 152, 152); 
-    --darkGray: rgb(93, 93, 93);
-    --black: black;
-    --white: white; 
+    --gray: #59534E;
+    --bison: #C8BAB0(152, 152, 152); 
+    --gullGray:#59534E(93, 93, 93);
+    --white: rgb(226, 222, 218);
+    --hitGray: #A9B5BC; 
 }
 
 /* All Elements */
@@ -17,6 +17,7 @@
 .site-header {
     display: flex;
     width: 100%;
+    background-color: #59534E;
 }
 
 .logo {
@@ -24,6 +25,7 @@
     margin-left: 1%;
     font-size: 26px;
     font-weight: bold;
+    color: rgb(226, 222, 218);
 }
 
 .navBar {
@@ -36,6 +38,7 @@
     color: var(--gray);
     margin-right: 2%;
     text-decoration: none;
+    text-decoration-color: #c4d3db;
 }
 
 .nav:link,
@@ -45,13 +48,14 @@
 
 .nav:hover,
 .nav:active {
-    color: var(--black);
+    color: rgb(226, 222, 218);
 }
 
 /* Hero Header */
 .hero {
     display: flex;
     justify-content: center;
+    background-color: #C8BAB0;
 }
 
 .heroHeader {
@@ -62,21 +66,24 @@
 
 .heroHeader h1 {
     font-size: 10vw;
+    color: #59534E;
 }
 
 /* Form */
 .formContainer {
-
+    background-color: #C8BAB0;
 }
 
 .form {
     width: 75%;
     margin: 0 auto;
+    
 }
 
 .formOutfit {
     width: 75%;
     margin: 0 auto;
+    
 }
 
 .formOutfitInput {
@@ -87,14 +94,15 @@
     margin: 0 auto 1%;
     border: 2px solid var(--gray);
     border-radius: 25px;
+    background-color: #C8BAB0;
 }
-
 
 .formOutfit label {
     display: block;
     width: 75%;
     margin: 0 auto 1%;
     text-align: center;
+
 }
 
 /* Select */
@@ -106,11 +114,14 @@
     min-width: 200px;
     width: 20%;
     margin: 0 auto 1%;
+    color: var(--gray);
+
 }
 
 select option {
     font-family: 'Courier New', Courier, monospace;
     font-size: 5px;
+
 }
 
 /* Submit */
@@ -122,8 +133,8 @@ form button {
     min-width: 100px;
     padding: 1%;
     margin: 0 auto 1%;
-    color: var(--white);
-    background-color: var(--darkGray);
+    color: var(--gray);
+    
 }
 
 /* Footer */
@@ -133,6 +144,7 @@ footer {
     justify-content: flex-end;
     height: 270px;
     margin-bottom: 0%;
+    background-color: #59534E;
 }
 
 .footerLinks {
@@ -145,13 +157,15 @@ footer {
 
 .footerLink {
     margin-bottom: 0;
-    color: var(--gray);
+    color: rgb(226, 222, 218);
     text-decoration: none;
+    background-color: #59534E;
+
 }
 
 .footerWords {
     display:block;
     margin: 0 auto;
     text-align: center;
-    color: var(--gray);
+    color: rgb(226, 222, 218);
 }

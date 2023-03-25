@@ -1,10 +1,10 @@
 /* Root */
 :root {
-    --gray: gray;
-    --lightGray: rgb(152, 152, 152); 
-    --darkGray: rgb(93, 93, 93);
-    --black: black;
-    --white: white; 
+    --gray: #59534E;
+    --bison: #C8BAB0(152, 152, 152); 
+    --gullGray:#59534E(93, 93, 93);
+    --white: rgb(226, 222, 218);
+    --hitGray: #A9B5BC; 
 }
 
 /* All Elements */
@@ -17,6 +17,7 @@
 .site-header {
     display: flex;
     width: 100%;
+    background-color: #59534E;
 }
 
 .logo {
@@ -24,6 +25,7 @@
     margin-left: 1%;
     font-size: 26px;
     font-weight: bold;
+    color: rgb(226, 222, 218);
 }
 
 .navBar {
@@ -36,6 +38,7 @@
     color: var(--gray);
     margin-right: 2%;
     text-decoration: none;
+    text-decoration-color: #c4d3db;
 }
 
 .nav:link,
@@ -45,8 +48,8 @@
 
 .nav:hover,
 .nav:active {
-    color: var(--black);
     cursor: pointer;
+    color: rgb(226, 222, 218);
 }
 
 /* Carousel */
@@ -57,6 +60,7 @@
     margin: 2vh auto;
     display: flex;
     flex-direction: column;
+    background-color: #C8BAB0;
 }
 
 
@@ -86,7 +90,7 @@
 .shirtsRow li,
 .pantsRow li,
 .shoesRow li {
-    background-color: var(--white);
+    background-color: #C8BAB0;
     border-radius: 25px;
     height: 85%;
     width: 32%;
@@ -160,7 +164,7 @@
     /* border: 2px solid rgba(49, 49, 49, 0.513); */
     cursor: pointer;
     scale: 1.1;
-    border: 2px solid rgba(12, 12, 12, 0.531);
+    border: 2px solid #59534E(12, 12, 12, 0.531);
 } 
 
 /* Main Cards */
@@ -169,8 +173,8 @@
 .mainPants,
 .mainShoes {
     flex-direction: column;
-    background-color: var(--white);
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 16px 50px 0 rgba(0, 0, 0, 1.5);
+    background-color: #C8BAB0;
+    box-shadow: 0 4px 8px 0 rgb(0, 0, 0, 0.5), 0 16px 50px 0 rgb(0, 0, 0, 1.5);
     border-radius: 25px;
     height: 90%;
     width: 35%;
@@ -210,16 +214,19 @@ form {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-    border: 5px solid black;
+    border: 5px solid #59534E;
     width: 75vw;
     height: 5vh;
+    background-color: #C8BAB0;
+
 }
 
 form h3 {
-    border: 5px solid black;
+    border: 5px solid #C8BAB0;
     display: block;
     font-size: 12px;
     width: 20%;
+    color: whitesmoke;
 }
 
 form button {
@@ -228,34 +235,38 @@ form button {
     border-radius: 10px;
     width: 20%;
     height: 100%;
-    color: var(--white);
-    background-color: var(--darkGray);
+    color: #C8BAB0;
+    background-color: #59534E;
 }
 
 form button:hover {
-    background-color: rgb(53, 53, 53);
+    background-color: #59534E;
     cursor: pointer;
 }
 
 form button:active {
-    background-color: var(--lightGray);
+    background-color: #59534E;
 }
 
 /* Past Styles */
 #pastStyles {
     display: flex;
     flex-direction: column;
+    background-color: #59534E;
+
 }
 
 #pastStyles h2 {
     text-align: center;
     font-size: 50px;
     margin-top: 7vh;
+    color: #C8BAB0;
 }
 
 #hanger {
     border-radius: 25px;
-    background-color: var(--darkGray);
+    background-color: #59534E;
+
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 16px 50px 0 rgba(0, 0, 0, 1.5);
     display: flex;
     justify-content: space-evenly;
@@ -279,7 +290,7 @@ form button:active {
 }
 
 .outfit li div {
-    border: 5px solid black;
+    border: 5px solid  #A9B5BC;
 }
 
 /* Footer */
@@ -289,6 +300,7 @@ footer {
     justify-content: flex-end;
     height: 100px;
     margin-bottom: 1%;
+    background-color: #59534E;
 }
 
 .footerLinks {
@@ -301,7 +313,7 @@ footer {
 
 .footerLink {
     margin-bottom: 0;
-    color: var(--gray);
+    color: #A9B5BC;
     text-decoration: none;
 }
 
@@ -309,7 +321,7 @@ footer {
     display:block;
     margin: 0 auto;
     text-align: center;
-    color: var(--gray);
+    color: #A9B5BC;
 }
 
 /* Media Queries */
@@ -325,7 +337,7 @@ footer {
         padding: 1%;
         margin: 2% auto 3%;
         color: var(--white);
-        background-color: var(--darkGray);
+        background-color: #C8BAB0;
     }
     .shirtsRow,
     .pantsRow,
