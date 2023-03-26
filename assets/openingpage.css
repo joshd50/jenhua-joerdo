@@ -131,8 +131,12 @@ footer {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    height: 270px;
-    margin-bottom: 0%;
+    position: fixed;
+    height: 50px;
+    margin-bottom: 3%;
+    bottom: 0;
+    left: 0;
+    right: 0;
 }
 
 .footerLinks {
