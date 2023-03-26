@@ -33,7 +33,7 @@ function OpenaiFetchAPI(userInput,value) {
       
 //save reponse to local storage
       localStorage.setItem('data',aiResponse);
-      window.location.assign("./displayJB2.html")
+      window.location.assign("./secondPageHTML/displayJB2.html")
       
     })
     .catch((error) => {
