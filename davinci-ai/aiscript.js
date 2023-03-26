@@ -1,5 +1,5 @@
 var aiResponse
-var apiKey = "APIKEY"
+var apiKey = "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"
 
 
 function OpenaiFetchAPI(userInput,value) {
@@ -8,7 +8,7 @@ function OpenaiFetchAPI(userInput,value) {
   var bearer =
     "Bearer " + apiKey;
 
-    var prmpt = "You are a fashion expert. Please create a 3 piece outfit (15 words max) for a" + value + "who needs" + userInput +". The items generated should include a random list of tops, bottoms, shoes, or accessories. Please limit details, only output the items generated, and do not reference their gender."
+    var prmpt = "You are a fashion expert and your responses are exact and precise. Please create a 3 piece outfit (15 words max) for a" + value + "who needs" + userInput +". The items generated should include a random list of tops, bottoms, shoes, or accessories. If and only if  budget is stated then add dollar amount to list for each item every time.  Please limit details, only output the items generated, and do not reference their gender."
 
   fetch(url, {
     method: "POST",
@@ -20,19 +20,20 @@ function OpenaiFetchAPI(userInput,value) {
         model: 'text-davinci-003',
       prompt: prmpt, // THIS IS WHERE PROMPT WILL GO
       max_tokens: 100,
-      temperature: 1,
+      temperature: .6,
     }),
   })
     .then((response) => {
       return response.json();
     })
     .then((data) => {
-
-      console.log(data["choices"][0].text);
       aiResponse = data["choices"][0].text
+      aiResponse = aiResponse.replace(/\$/g, "under $");
+      console.log(aiResponse);
+      
 //save reponse to local storage
-      localStorage.setItem('data',aiResponse);
-      window.location.assign("../displayJB2.html")
+      // localStorage.setItem('data',aiResponse);
+      // window.location.assign("../displayJB2.html")
       
     })
     .catch((error) => {

@@ -1521,6 +1521,7 @@ function pullAIdata(){
     //     return
     // } else {
         console.log(rawData);
+        
         var entries =  rawData.split(",");
         fetchTopSearch(entries[0]);
         fetchBottomSearch(entries[1]);
