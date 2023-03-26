@@ -1,10 +1,10 @@
 /* Root */
 :root {
-    --gray: gray;
-    --lightGray: rgb(152, 152, 152); 
-    --darkGray: rgb(93, 93, 93);
+    --gray: #59534E;
+    --lightGray: #C8BAB0(152, 152, 152); 
+    --darkGray: #99A4B1(93, 93, 93);
     --black: black;
-    --white: white; 
+    --white: #A9B5BC; 
 }
 
 /* All Elements */
