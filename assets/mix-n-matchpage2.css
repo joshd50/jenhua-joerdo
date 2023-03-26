@@ -13,6 +13,11 @@
     font-family:'Abril Fatface', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+#maincont {
+    height: 100vh;
+    /* width: 100vh; */
+}
+
 /* Header */
 .site-header {
     display: flex;
@@ -56,7 +61,7 @@
 /* Josh changing ids to classes */
 .carousel {
     width: 80vw;
-    height: 80vh;
+    height: 85vh;
     margin: 2vh auto;
     display: flex;
     flex-direction: column;
@@ -218,20 +223,27 @@ form {
     width: 75vw;
     height: 5vh;
     background-color: #C8BAB0;
+    position: relative;
+    bottom: 0;
+    left: 0;
+    right: 0;
 
 }
 
 form h3 {
     border: 5px solid #C8BAB0;
     display: block;
-    font-size: 12px;
+    font-size: 18px;
     width: 20%;
     color: whitesmoke;
+    text-align: center;
 }
 
 form button {
     display: flex;
     justify-content: center;
+    text-align: center;
+    align-items: center;
     border-radius: 10px;
     width: 20%;
     height: 100%;
