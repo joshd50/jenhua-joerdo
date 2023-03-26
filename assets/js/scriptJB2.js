@@ -1541,51 +1541,51 @@ renderTop(object);
 console.log(object)
 
 $('.rightShirts').click(function(){
-    topIndex++;
     var topData = JSON.parse(localStorage.getItem('topData'))
-    renderTop(topData);
+    var tempData = topData.shopping_results.shift()
+    topData.shopping_results.push(tempData)
+    localStorage.setItem('topData',JSON.stringify(topData))
+    renderTop(topData)
 })
 
 $('.leftShirts').click(function(){
-        var topData = JSON.parse(localStorage.getItem('topData'))
-        var tempData = topData.shopping_results.pop()
-        topData.shopping_results.unshift(tempData)
-        localStorage.setItem('topData',JSON.stringify(topData))
-        console.log(topData)
-        renderTop(topData)
+    var topData = JSON.parse(localStorage.getItem('topData'))
+    var tempData = topData.shopping_results.pop()
+    topData.shopping_results.unshift(tempData)
+    localStorage.setItem('topData',JSON.stringify(topData))
+    renderTop(topData)
 })
 
 $('.rightPants').click(function(){
-    // shift then push
-    bottomIndex++;
     var bottomData = JSON.parse(localStorage.getItem('bottomData'))
-    renderBottom(bottomData);
+    var tempData = bottomData.shopping_results.shift()
+    bottomData.shopping_results.push(tempData)
+    localStorage.setItem('bottomData',JSON.stringify(bottomData))
+    renderBottom(bottomData)
 })
 
 $('.leftPants').click(function(){
-    if (bottomIndex === 0) {
-        return
-    } else {
-        bottomIndex--;
-        var bottomData = JSON.parse(localStorage.getItem('bottomData'))
-        renderTop(bottomData);
-    }
+    var bottomData = JSON.parse(localStorage.getItem('bottomData'))
+    var tempData = bottomData.shopping_results.pop()
+    bottomData.shopping_results.unshift(tempData)
+    localStorage.setItem('bottomData',JSON.stringify(bottomData))
+    renderBottom(bottomData)
 })
 
 $('.rightShoes').click(function(){
-    shoeIndex++;
     var shoeData = JSON.parse(localStorage.getItem('shoeData'))
-    renderBottom(shoeData);
+    var tempData = shoeData.shopping_results.shift()
+    shoeData.shopping_results.push(tempData)
+    localStorage.setItem('shoeData',JSON.stringify(shoeData))
+    renderShoe(shoeData)
 })
 
 $('.leftShoes').click(function(){
-    if (shoeIndex === 0) {
-        return
-    } else {
-        shoeIndex--;
-        var shoeData = JSON.parse(localStorage.getItem('shoeData'))
-        renderTop(shoeData);
-    }
+    var shoeData = JSON.parse(localStorage.getItem('shoeData'))
+    var tempData = shoeData.shopping_results.pop()
+    shoeData.shopping_results.unshift(tempData)
+    localStorage.setItem('shoeData',JSON.stringify(shoeData))
+    renderShoe(shoeData)
 })
 
 
@@ -1613,5 +1613,5 @@ $('#saveDesign').click(function() {
   // Save the saved styles array to local storage
   localStorage.setItem("topSavedStyles", JSON.stringify(topSavedStyles));
 
-  
+
 });
