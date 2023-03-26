@@ -13,11 +13,15 @@
     font-family:'Abril Fatface', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+body{
+    background-color: #d0d0d07b;
+}
+
 /* Header */
 .site-header {
     display: flex;
     width: 100%;
-    background-color: #59534E;
+    background-color: #C8BAB0;
 }
 
 .logo {
@@ -25,7 +29,7 @@
     margin-left: 1%;
     font-size: 26px;
     font-weight: bold;
-    color: rgb(226, 222, 218);
+    color: #59534E;
 }
 
 .navBar {
@@ -60,7 +64,7 @@
     margin: 2vh auto;
     display: flex;
     flex-direction: column;
-    background-color: #C8BAB0;
+    
 }
 
 
@@ -89,7 +93,7 @@
 .shirtsRow li,
 .pantsRow li,
 .shoesRow li {
-    background-color: #C8BAB0;
+    background-color: #d0d0d07b;;
     border-radius: 25px;
     height: 85%;
     width: 32%;
@@ -170,7 +174,7 @@
 .mainPants,
 .mainShoes {
     flex-direction: column;
-    background-color: #C8BAB0;
+    background-color: #d0d0d07b;
     box-shadow: 0 4px 8px 0 rgb(0, 0, 0, 0.5), 0 16px 50px 0 rgb(0, 0, 0, 1.5);
     border-radius: 25px;
     height: 90%;
@@ -213,7 +217,7 @@ form {
     border: 5px solid #59534E;
     width: 75vw;
     height: 5vh;
-    background-color: #C8BAB0;
+    background-color:#d0d0d07b;
 
 }
 
@@ -222,7 +226,7 @@ form h3 {
     display: block;
     font-size: 12px;
     width: 20%;
-    color: whitesmoke;
+    color: #59534E;
 }
 
 form button {
@@ -248,7 +252,7 @@ form button:active {
 #pastStyles {
     display: flex;
     flex-direction: column;
-    background-color: #59534E;
+    /* background-color: #59534E; */
 
 }
 
@@ -256,13 +260,17 @@ form button:active {
     text-align: center;
     font-size: 50px;
     margin-top: 7vh;
-    color: #C8BAB0;
+    color: #59534E;
+    text-shadow:
+    -1px -1px 0 #9e9e9e,  
+    1px -1px 0 #ffff,
+    -1px 1px 0#9e9e9e,
+    1px 1px 0 #9e9e9e;
 }
 
 #hanger {
     border-radius: 25px;
     background-color: #59534E;
-
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 16px 50px 0 rgba(0, 0, 0, 1.5);
     display: flex;
     justify-content: space-evenly;
@@ -296,7 +304,7 @@ footer {
     justify-content: flex-end;
     height: 100px;
     margin-bottom: 1%;
-    background-color: #59534E;
+    background-color: #C8BAB0;
 }
 
 .footerLinks {
@@ -309,7 +317,7 @@ footer {
 
 .footerLink {
     margin-bottom: 0;
-    color: #A9B5BC;
+    color: #59534E;
     text-decoration: none;
 }
 
@@ -317,7 +325,7 @@ footer {
     display: block;
     margin: 0 auto;
     text-align: center;
-    color: #A9B5BC;
+    color: #59534E;
 }
 
 /* Media Queries */
