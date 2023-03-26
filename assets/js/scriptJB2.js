@@ -1616,3 +1616,8 @@ $('#saveDesign').click(function() {
 
 
 });
+
+
+$('#gohome').click(function (){
+    window.location.assign("./openingpage.html")
+})
