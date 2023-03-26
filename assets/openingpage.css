@@ -26,7 +26,7 @@ body {
 .site-header {
     display: flex;
     width: 100%;
-    background-color: #59534E;
+    background-color: #C8BAB0;
 }
 
 .logo {
@@ -34,7 +34,7 @@ body {
     margin-left: 1%;
     font-size: 26px;
     font-weight: bold;
-    color: rgb(226, 222, 218);
+    color: #59534E;
 }
 
 .navBar {
@@ -76,7 +76,13 @@ body {
 .heroHeader h1 {
     font-size: 10vw;
     color: #59534E;
+    text-shadow:
+    -1px -1px 0 #9e9e9e,  
+    1px -1px 0 #ffff,
+    -1px 1px 0#9e9e9e,
+    1px 1px 0 #9e9e9e;
 }
+
 
 /* Form */
 /* .formContainer {
@@ -103,7 +109,7 @@ body {
     margin: 0 auto 1%;
     border: 2px solid var(--gray);
     border-radius: 25px;
-    background-color: #C8BAB0;
+    
 }
 
 .formOutfit label {
@@ -153,7 +159,7 @@ footer {
     justify-content: flex-end;
     height: 270px;
     margin-bottom: 0%;
-    background-color: #59534E;
+    background-color: #C8BAB0;
     position: fixed;
     height: 60px;
     margin-bottom: 0%;
@@ -172,9 +178,9 @@ footer {
 
 .footerLink {
     margin-bottom: 10px;
-    color: rgb(226, 222, 218);
+    color: #59534E;
     text-decoration: none;
-    background-color: #59534E;
+    background-color: #C8BAB0;
 
 }
 

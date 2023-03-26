@@ -17,12 +17,15 @@
     height: 100vh;
     /* width: 100vh; */
 }
+body{
+    background-color: #d0d0d07b;
+}
 
 /* Header */
 .site-header {
     display: flex;
     width: 100%;
-    background-color: #59534E;
+    background-color: #C8BAB0;
 }
 
 .logo {
@@ -30,7 +33,7 @@
     margin-left: 1%;
     font-size: 26px;
     font-weight: bold;
-    color: rgb(226, 222, 218);
+    color: #59534E;
 }
 
 .navBar {
@@ -65,22 +68,22 @@
     margin: 2vh auto;
     display: flex;
     flex-direction: column;
-    background-color: #C8BAB0;
+    
 }
 
 
 .shirts,
 .pants,
 .shoes {
- width: 75%;
- height: 75%;
- margin: 0 auto;
- overflow: auto;
-}
+    width: 75%;
+    height: 75%;
+    margin: 0 auto;
+    overflow: auto;
+    }
 
 .shirtsRow,
 .pantsRow,
-.shoesRow { 
+.shoesRow {
     list-style: none;
     padding-left: 5%;
     padding-right: 5%;
@@ -89,13 +92,12 @@
     width: 60%;
     height: 90%;
     margin: 0 auto;
-
 }
 
 .shirtsRow li,
 .pantsRow li,
 .shoesRow li {
-    background-color: #C8BAB0;
+    background-color: #d0d0d07b;;
     border-radius: 25px;
     height: 85%;
     width: 32%;
@@ -107,7 +109,7 @@
 
 .shirtsRow li img,
 .pantsRow li img,
-.shoesRow li img{
+.shoesRow li img {
     width: 100%;
     height: 100%;
 }
@@ -120,15 +122,13 @@
     margin: 0 auto 2%;
 }
 
-
-
 .shirtsRow li:hover,
 .pantsRow li:hover,
 .shoesRow li:hover {
     /* border: 2px solid rgba(49, 49, 49, 0.513); */
     cursor: pointer;
     z-index: 0;
-} 
+}
 
 /* Arrows */
 .leftArrow {
@@ -161,12 +161,12 @@
 .rightShoes:hover .rightAfter {
     display: block;
     background: rgba(122, 120, 120, 0.5);
-}
+    }
 
 .shirtsRow li:active,
 .pantsRow li:active,
 .shoesRow li:active {
-    /* border: 2px solid rgba(49, 49, 49, 0.513); */
+  /* border: 2px solid rgba(49, 49, 49, 0.513); */
     cursor: pointer;
     scale: 1.1;
     border: 2px solid #59534E(12, 12, 12, 0.531);
@@ -178,14 +178,14 @@
 .mainPants,
 .mainShoes {
     flex-direction: column;
-    background-color: #C8BAB0;
+    background-color: #d0d0d07b;
     box-shadow: 0 4px 8px 0 rgb(0, 0, 0, 0.5), 0 16px 50px 0 rgb(0, 0, 0, 1.5);
     border-radius: 25px;
     height: 90%;
     width: 35%;
     margin: 2% auto;
     z-index: 1;
-    transform: scale(1.2,1);
+    transform: scale(1.2, 1);
     overflow: scroll;
 }
 
@@ -209,8 +209,7 @@
 .mainShoes:hover {
     scale: 1.1;
     cursor: pointer;
-} 
-
+}
 
 /* Form */
 
@@ -222,11 +221,11 @@ form {
     border: 5px solid #59534E;
     width: 75vw;
     height: 5vh;
-    background-color: #C8BAB0;
-    position: relative;
-    bottom: 0;
-    left: 0;
-    right: 0;
+    background-color:#d0d0d07b;
+        position: relative;
+            bottom: 0;
+            left: 0;
+            right: 0;
 
 }
 
@@ -235,8 +234,8 @@ form h3 {
     display: block;
     font-size: 18px;
     width: 20%;
-    color: whitesmoke;
-    text-align: center;
+    color: #59534E;
+        text-align: center;
 }
 
 form button {
@@ -264,7 +263,7 @@ form button:active {
 #pastStyles {
     display: flex;
     flex-direction: column;
-    background-color: #59534E;
+    /* background-color: #59534E; */
 
 }
 
@@ -272,13 +271,17 @@ form button:active {
     text-align: center;
     font-size: 50px;
     margin-top: 7vh;
-    color: #C8BAB0;
+    color: #59534E;
+    text-shadow:
+    -1px -1px 0 #9e9e9e,  
+    1px -1px 0 #ffff,
+    -1px 1px 0#9e9e9e,
+    1px 1px 0 #9e9e9e;
 }
 
 #hanger {
     border-radius: 25px;
     background-color: #59534E;
-
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 16px 50px 0 rgba(0, 0, 0, 1.5);
     display: flex;
     justify-content: space-evenly;
@@ -312,7 +315,7 @@ footer {
     justify-content: flex-end;
     height: 100px;
     margin-bottom: 1%;
-    background-color: #59534E;
+    background-color: #C8BAB0;
 }
 
 .footerLinks {
@@ -325,19 +328,19 @@ footer {
 
 .footerLink {
     margin-bottom: 0;
-    color: #A9B5BC;
+    color: #59534E;
     text-decoration: none;
 }
 
 .footerWords {
-    display:block;
+    display: block;
     margin: 0 auto;
     text-align: center;
-    color: #A9B5BC;
+    color: #59534E;
 }
 
 /* Media Queries */
-@media screen  and  (max-width: 1200px) {
+@media screen and (max-width: 1200px) {
     form button {
         display: flex;
         justify-content: center;
@@ -353,48 +356,107 @@ footer {
     }
     .shirtsRow,
     .pantsRow,
-    .shoesRow { 
+    .shoesRow {
         list-style: none;
         padding-left: 5%;
         padding-right: 5%;
         display: flex;
         flex-direction: row;
-        width: 95%;
-        height: 70%;
+        width: auto;
+        height: 90%;
         margin: 0 auto;
         margin-bottom: 2vh;
-}
+    }
 
-.shirtsRow li div,
-.pantsRow li div,
-.shoesRow li div {
-    width: 70%;
-    text-align: center;
-    margin: 0 auto 2%;
-    font-size: 12px;
-}
+    .shirtsRow li div,
+    .pantsRow li div,
+    .shoesRow li div {
+        width: 70%;
+        text-align: center;
+        margin: 0 auto 2%;
+        font-size: 12px;
+    }
 
-.mainShirts div,
-.mainPants div,
-.mainShoes div {
-    width: 70%;
-    text-align: center;
-    margin: 0 auto 2%;
-    font-size: 12px;
-}
-}
+    .mainShirts div,
+    .mainPants div,
+    .mainShoes div {
+        width: 70%;
+        text-align: center;
+        margin: 0 auto 2%;
+        font-size: 12px;
+    }
+    }
 
-@media screen and (max-width 900px) {
+@media screen and (max-width: 900px) {
     .outfit {
         border: 5px solid gray;
         border-radius: 25px;
         list-style-type: none;
         width: 30%;
-        height: 56%;
+        height: auto;
         margin: 0.5% auto 2%;
         background-color: white;
-    }      
+    }
+    }
+
+/* MOBILE PHONE TO SMALL TABLET */
+@media screen and (max-width: 500px) {
+    .logo {
+        padding-top: 2rem;
+        display: flex;
+    }
+
+    .navBar {
+        display: flex;
+        flex-direction: column;
+        text-align: end;
+    }
+
+    .carousel {
+        width: 95vw;
+        height: 80vh;
+        margin: 1;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .shirts,
+    .pants,
+    .shoes {
+        display: flex;
+        height: auto;
+        width: 100%;
+        margin: 0;
+        padding:0;
+        overflow: hidden;
+    }
+
+    .shirtsRow,
+    .pantsRow,
+    .shoesRow {
+        display: flex;
+        max-height: 100%;
+        width: auto;
+        margin: 0;
+    }
+
+/*main card*/
+    .shirtsRow li img,
+    .pantsRow li img,
+    .shoesRow li img {
+        max-width: 100%;
+        height: 100%;
+    }
+
+.mainShirts img,
+.mainPants img,
+.mainShoes img {
+    max-width: 100%;
+    height: 100%;
+    overflow: scroll;
 }
+}
+
 /* 
 @media screen and (max-width: 1200px) {
     .shirtsRow,
@@ -437,14 +499,14 @@ footer {
 } */
 
         .loader {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: aliceblue;
-            transition: opacity 0.75s, visibilty 0.75s;
-        }
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: aliceblue;
+    transition: opacity 0.75s, visibilty 0.75s;
+}
