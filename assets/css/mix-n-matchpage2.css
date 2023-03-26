@@ -218,10 +218,10 @@ form {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-    border: 5px solid #59534E;
+    /* border: 5px solid #59534E; */
     width: 75vw;
     height: 5vh;
-    background-color:#d0d0d07b;
+    /* background-color:#d0d0d07b; */
         position: relative;
             bottom: 0;
             left: 0;
@@ -230,7 +230,7 @@ form {
 }
 
 form h3 {
-    border: 5px solid #C8BAB0;
+    /* border: 5px solid #C8BAB0; */
     display: block;
     font-size: 18px;
     width: 20%;
@@ -243,7 +243,7 @@ form button {
     justify-content: center;
     text-align: center;
     align-items: center;
-    border-radius: 10px;
+    border-radius: 100px;
     width: 20%;
     height: 100%;
     color: #C8BAB0;

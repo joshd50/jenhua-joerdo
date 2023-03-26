@@ -1,5 +1,5 @@
 var aiResponse
-var apiKey = "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"
+var apiKey = "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"
 
 
 function OpenaiFetchAPI(userInput,value) {
@@ -32,8 +32,8 @@ function OpenaiFetchAPI(userInput,value) {
       console.log(aiResponse);
       
 //save reponse to local storage
-      // localStorage.setItem('data',aiResponse);
-      // window.location.assign("../displayJB2.html")
+      localStorage.setItem('data',aiResponse);
+      window.location.assign("./displayJB2.html")
       
     })
     .catch((error) => {
