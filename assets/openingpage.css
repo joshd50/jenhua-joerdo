@@ -13,6 +13,13 @@
     font-family:'Abril Fatface', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+body {
+    background-image: url("./ images/pexels-rodion-kutsaiev-7911758.jpg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+}
+
 /* Header */
 .site-header {
     display: flex;
@@ -55,7 +62,7 @@
 .hero {
     display: flex;
     justify-content: center;
-    background-color: #C8BAB0;
+    /* background-color: #C8BAB0; */
 }
 
 .heroHeader {
@@ -70,9 +77,9 @@
 }
 
 /* Form */
-.formContainer {
+/* .formContainer {
     background-color: #C8BAB0;
-}
+} */
 
 .form {
     width: 75%;
@@ -145,6 +152,12 @@ footer {
     height: 270px;
     margin-bottom: 0%;
     background-color: #59534E;
+    position: fixed;
+    height: 60px;
+    margin-bottom: 0%;
+    bottom: 0;
+    left: 0;
+    right: 0;
 }
 
 .footerLinks {
@@ -156,7 +169,7 @@ footer {
 }
 
 .footerLink {
-    margin-bottom: 0;
+    margin-bottom: 10px;
     color: rgb(226, 222, 218);
     text-decoration: none;
     background-color: #59534E;
@@ -165,7 +178,7 @@ footer {
 
 .footerWords {
     display:block;
-    margin: 0 auto;
+    margin: 5px auto;
     text-align: center;
     color: rgb(226, 222, 218);
 }
