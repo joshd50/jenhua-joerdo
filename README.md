@@ -13,12 +13,9 @@ If the user favorites any of the options, they will be saved in Local storage, a
 Our team of developers created this application with the idea of helping the target user be able to decide on an outfit idea for any occasion whenever the user may have no clue where to begin. The user is in need of an outfit idea but may not be able to go get a personal shopper or stylist--- This is where the help of Sylist.AI comes in.
 Stylist.Ai provides the services of an "at-home" or "on-the-go" stylist to any user in need of styling services.
 
-Stylist.AI solves the need to hire outside parties to style an outfit, shortens search requests for the user, and can even link the user to a desired item for future purchase. 
+Stylist.AI solves the need to hire outside parties to style an outfit, shortens search requests for the user + minimizes browser tabs open, and can even link the user to a desired item for future purchase.
 
-
-## Table of Contents (Optional)
-
-If your README is long, add a table of contents to make it easy for users to find what they need.
+## Table of Contents
 
 - [Installation](#installation)
 - [Usage](#usage)
@@ -41,23 +38,28 @@ Homepage
 Styles
 ![styles generator](./assets/%20images/stylesandpast.png)
 
+Generated Second Look
+![outfits generator](./assets/%20images/generatedresults.html.png)
 
+WIREFRAME:
+![wireframe1](./assets/%20images/openingpagewireframe.png)
+![wireframe2](./assets/%20images/outfitwireframe.png)
+![wireframe3](./assets/%20images/savedstyleswireframe.png)
 ## Credits
+
     CodeCartel Team:
 
     Joshua Dadbin (https://github.com/autohome)
 
-    Eduardo (https://github.com/LaloEnri23)
+    Eduardo Enriquez(https://github.com/LaloEnri23)
 
     Joseph Baek (https://github.com/jbaek97)
 
     Jennifer Mejia (https://github.com/jjjgm)
 
-
 OpenAI API Reference (https://platform.openai.com/docs/api-reference)
-Scraper API Reference (https://www.scraperapi.com/guides/)
 
-If you followed tutorials, include links to those here as well.
+Scraper API Reference (https://www.scraperapi.com/guides/)
 
 ## License
 
@@ -67,17 +69,14 @@ MIT
 
 [https://choosealicense.com/](https://choosealicense.com/)
 
-
-## Features
-
-If your project has a lot of features, list them here.
-
 ## How to Contribute
 
-If you created an application or package and would like other developers to contribute it, you can include guidelines for how to do so. The [Contributor Covenant](https://www.contributor-covenant.org/) is an industry standard, but you can always write your own if you'd prefer.
+If contributions are requested, please reference to the [contributing guide] below.
+
+[Contributor Covenant](https://www.contributor-covenant.org/)
 
 ## Tests
+
 Deployment:
 
 [Stylist.AI](https://autohome.github.io/jenhua-joerdo/)
-
