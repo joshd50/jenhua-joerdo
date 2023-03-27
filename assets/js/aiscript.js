@@ -8,7 +8,7 @@ function OpenaiFetchAPI(userInput,value) {
   var bearer =
     "Bearer " + apiKey;
 
-    var prmpt = "You are a fashion expert and your responses are exact, precise and specific. Please create a 3 piece outfit (15 words max) for a" + value + "who needs" + userInput +". The items generated should include a random detailed list of tops, bottoms, shoes, or accessories. only if  budget is stated will you then add dollar amount to list for each item every time.  Please limit details, only output the items generated, and do not reference their gender."
+    var prmpt = "You are a fashion expert and your responses are exact, precise and specific. Please create a 3 piece outfit (15 words max) for a" + value + "who needs" + userInput +". The items generated should include a random detailed list of tops, bottoms, shoes, or accessories. Please limit details, only output the items generated, and do not reference their gender."
 
   fetch(url, {
     method: "POST",
