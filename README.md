@@ -12,6 +12,7 @@ If the user favorites any of the options, they will be saved in Local storage, a
 Our team of developers created this application with the idea of helping the target user be able to decide on an outfit idea for any occasion whenever the user may have no clue where to begin. The user is in need of an outfit idea but may not be able to go get a personal shopper or stylist--- This is where the help of Sylist.AI comes in.
 Stylist.Ai provides the services of an “at-home” or “on-the-go” stylist to any user in need of styling services.
 
+
 Stylist.AI solves the need to hire outside parties to style an outfit, shortens search requests for the user + minimizes browser tabs open, and can even link the user to a desired item for future purchase.
 
 ## Table of Contents
@@ -37,12 +38,16 @@ Styles
 
 ![styles generator](./assets/%20images/stylesandpast.png)
 
+Generated Second Look
+![outfits generator](./assets/%20images/generatedresults.html.png)
 
 WIREFRAME:
+
 
 ![wireframe1](./assets/%20images/wireframe1.png)
 ![wireframe2](./assets/%20images/wireframe2.png)
 ![wireframe3](./assets/%20images/wireframe3.pngg)
+
 
 ## Credits
 
@@ -52,14 +57,15 @@ WIREFRAME:
     Joseph Baek (https://github.com/jbaek97)
     Jennifer Mejia (https://github.com/jjjgm)
 
+
 OpenAI API Reference (https://platform.openai.com/docs/api-reference)
 
 Scraper API Reference (https://www.scraperapi.com/guides/)
 
+
 ## License
 
 MIT
-
 (reference repository for license information)
 [https://choosealicense.com/](https://choosealicense.com/)
 
