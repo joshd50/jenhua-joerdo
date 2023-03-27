@@ -11,6 +11,7 @@ let bottomSavedStyles = [];
 let shoeSavedStyles = [];
 
 
+// options key to use rapidAPI for google scraper
 const options = {
 	method: 'GET',
 	headers: {
@@ -19,7 +20,7 @@ const options = {
 	}
 };
 
-
+// keys for google scraper
 var gdataBaseUrl = 'https://cors-anywhere.herokuapp.com/https://google-data-scraper.p.rapidapi.com/search/shop/';
 var gdataKey = '?api_key=5e15448586c1e9fb698790dee1a4e40d';
 
@@ -38,6 +39,7 @@ function fetchTopSearch (topSearch) {
         .then(function(data) {
             // handle the response data
             localStorage.setItem('topData', JSON.stringify(data));
+            // render response data
             renderTop(data);
         })
         .catch(function(error) {
@@ -59,6 +61,7 @@ bottomSearch = bottomSearch.split(' ');
         .then(function(data) {
             // handle the response data
             localStorage.setItem('bottomData', JSON.stringify(data));
+            // render response data
             renderBottom(data);
         })
         .catch(function(error) {
@@ -79,6 +82,7 @@ bottomSearch = bottomSearch.split(' ');
         .then(function(data) {
             // handle the response data
             localStorage.setItem('shoeData', JSON.stringify(data));
+            // render response data
             renderShoe(data);
         })
         .catch(function(error) {
@@ -86,20 +90,21 @@ bottomSearch = bottomSearch.split(' ');
         })
 	}
 
-// for (var i = 0; i < Math.min(3, topData.shopping_results.length); i++)
+
 
 function renderTop (topData) {
 	for (var i = topIndex; i < topIndex + 3; i++) {
-
+        // pulls needed information from response
 		var topImage = topData.shopping_results[i].thumbnail;
 		var topTitle = topData.shopping_results[i].title;
 		var topLink = topData.shopping_results[i].link;
 		var topPrice = topData.shopping_results[i].price;
 		var topSource = topData.shopping_results[i].source;
 
+        // gets card to push
 		var currentCard = $('#topCont').find(`#card${i -  topIndex}`);
 
-
+        // pushes data into elements
 		currentCard.find('.shirts').attr('src', null);
 		currentCard.find('.shirts').attr('src',topImage);
 		currentCard.find('h5').text(topSource);
@@ -113,15 +118,17 @@ function renderTop (topData) {
 
 function renderBottom (bottomData) {
 	for (var i = bottomIndex; i < bottomIndex + 3; i++) {
-
+        // pulls needed information from response
 		var bottomImage = bottomData.shopping_results[i].thumbnail;
 		var bottomTitle = bottomData.shopping_results[i].title;
 		var bottomLink = bottomData.shopping_results[i].link;
 		var bottomPrice = bottomData.shopping_results[i].price;
 		var bottomSource = bottomData.shopping_results[i].source;
 
+        // gets card to push
 		var currentCard = $('#bottomCont').find(`#card${i -  bottomIndex}`);
 
+        // pushes data into elements
         currentCard.find('.pants').attr('src', '');
 		currentCard.find('.pants').attr('src',bottomImage);
 		currentCard.find('h5').text(bottomSource);
@@ -135,13 +142,17 @@ function renderBottom (bottomData) {
 
 function renderShoe (shoeData) {
 	for (var i = shoeIndex; i < shoeIndex + 3; i++) {
+        // pulls needed information from response
 		var shoeImage = shoeData.shopping_results[i].thumbnail;
 		var shoeTitle = shoeData.shopping_results[i].title;
 		var shoeLink = shoeData.shopping_results[i].link;
 		var shoePrice = shoeData.shopping_results[i].price;
 		var shoeSource = shoeData.shopping_results[i].source;
 
+        // gets card to push
 		var currentCard = $('#shoeCont').find(`#card${i - shoeIndex}`);
+
+        // pushes data into elements
         currentCard.find('.shoes').attr('src', '');
 		currentCard.find('.shoes').attr('src',shoeImage);
 		currentCard.find('h5').text(shoeSource);
@@ -153,10 +164,12 @@ function renderShoe (shoeData) {
 	}
 }
 
-
+// initial function to pull response from GPT which is stored locally
 function pullAIdata(){
     var rawData = localStorage.getItem('data');
         var entries =  rawData.split(",");
+
+        // trims to remove blank spaces
         fetchTopSearch(entries[0].trim());
         fetchBottomSearch(entries[1].trim());
         fetchShoeSearch(entries[2].trim());
@@ -174,6 +187,9 @@ pullAIdata();
 // renderShoe(shoeObject);
 // renderTop(topObject);
 
+
+// following functions are for rotating when arrows are clicked
+// all right clicks take last object of back end and pushes to beginng. Left is vice versa
 
 $('.rightShirts').click(function(){
     var topData = JSON.parse(localStorage.getItem('topData'))
@@ -224,6 +240,7 @@ $('.leftShoes').click(function(){
 })
 
 
+
 $('#saveDesign').click(function(event) {
   // Find the main shirt card and get its information
     event.preventDefault();
@@ -252,7 +269,6 @@ $('#saveDesign').click(function(event) {
     };
 
     // Add the main shirt object to the saved styles array
-    
     // Save the saved styles array to local storage
     topSavedStyles.push(mainObject);
     localStorage.setItem("topSavedStyles", JSON.stringify(topSavedStyles));
