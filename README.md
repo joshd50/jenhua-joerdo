@@ -42,9 +42,9 @@ Generated Second Look
 ![outfits generator](./assets/%20images/generatedresults.html.png)
 
 WIREFRAME:
-![wireframe1](./assets/%20images/openingpagewireframe.png)
-![wireframe2](./assets/%20images/outfitwireframe.png)
-![wireframe3](./assets/%20images/savedstyleswireframe.png)
+![wireframe1](./assets/%20images/wireframe1.png)
+![wireframe2](./assets/%20images/wireframe2.png)
+![wireframe3](./assets/%20images/wireframe3.png)
 ## Credits
 
     CodeCartel Team:
