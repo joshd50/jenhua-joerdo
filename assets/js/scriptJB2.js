@@ -5,6 +5,7 @@ var topIndex = 0;
 var bottomIndex = 3;
 var shoeIndex = 6;
 
+
 let topSavedStyles = [];
 let bottomSavedStyles = [];
 let shoeSavedStyles = [];
@@ -1590,32 +1591,113 @@ $('.leftShoes').click(function(){
 })
 
 
-$('#saveDesign').click(function() {
+$('#saveDesign').click(function(event) {
   // Find the main shirt card and get its information
-  var mainShirtCard = $('#mainShirts').children().first();
+  event.preventDefault();
+  var mainShirtCard = $('.mainShirts').children().first();
+  console.log(mainShirtCard);
   var mainShirtImage = mainShirtCard.find('.shirts').attr('src');
+  console.log(mainShirtImage);
   var mainShirtTitle = mainShirtCard.find('p.first').text();
+  console.log(mainShirtTitle);
   var mainShirtLink = mainShirtCard.find('a').attr('href');
   var mainShirtPrice = mainShirtCard.find('p.second').text();
   var mainShirtSource = mainShirtCard.find('h5').text();
 
+  // Pants
+  var mainPantsCard = $('.mainPants').children().first();
+  var mainPantsImage = mainPantsCard.find('.pants').attr('src');
+
+  // Shoes
+  var mainShoesCard = $('.mainShoes').children().first();
+  var mainShoesImage = mainShoesCard.find('.shoes').attr('src');
   // Create an object with the main shirt information
-  var mainShirtObject = {
-    image: mainShirtImage,
-    title: mainShirtTitle,
-    link: mainShirtLink,
-    price: mainShirtPrice,
-    source: mainShirtSource
+  var imageShirtSource = mainShirtImage;
+  var imagePantsSource = mainPantsImage;
+  var imageShoesSource = mainShoesImage;
+  var mainObject = {
+    mainShirt: imageShirtSource,
+    mainPants: imagePantsSource,
+    mainShoes: imageShoesSource
   };
+  console.log(mainObject);
 
   // Add the main shirt object to the saved styles array
-  topSavedStyles.push(mainShirtObject);
-
+  
   // Save the saved styles array to local storage
+  topSavedStyles.push(mainObject);
   localStorage.setItem("topSavedStyles", JSON.stringify(topSavedStyles));
-
-
+//   var tops = localStorage.getItem("topSavedStyles");
+    // var topsData = JSON.parse(tops);
+    // var hanger = document.querySelector("#hanger");
+//   for(i=0; i <topsData.length; i++) {
+//     var shirtSource = topsData[i].mainShirt;
+//     var pantsSource = topsData[i].mainPants;
+//     var shoesSource = topsData[i].mainShoes;
+//     hanger.innerHTML += `<li class="outfit"><image src="${shirtSource}"><image src="${pantsSource}"><image src="${shoesSource}"></li>`;
+// };
+  init();
 });
+
+//   // Create an object with the main shirt information
+//   $('#saveDesign').click(function() {
+//     preventDefault();
+//   var mainShirtObject = {
+//     image: mainShirtImage,
+//     title: mainShirtTitle,
+//     link: mainShirtLink,
+//     price: mainShirtPrice,
+//     source: mainShirtSource
+//   };
+//   console.log(mainShirtObject);
+
+//   // Add the main shirt object to the saved styles array
+//   topSavedStyles.push(mainShirtObject);
+
+//   // Save the saved styles array to local storage
+//   localStorage.setItem("topSavedStyles", JSON.stringify(topSavedStyles));
+
+// });
+
+function init() {
+    var topSaved = JSON.parse(localStorage.getItem("topSavedStyles"));
+    console.log(topSaved);
+    var hanger = document.querySelector("#hanger");
+    if(topSaved !== null) { 
+    topSavedStyles = topSaved;
+        hanger.innerHTML = '';
+        console.log(topSavedStyles)
+    for(i=0; i <topSavedStyles.length; i++) {
+
+        var shirtSource = topSaved[i].mainShirt;
+        var pantsSource = topSaved[i].mainPants;
+        var shoesSource = topSaved[i].mainShoes;
+
+        // closeButton = $('<button>')
+        // closeButton.attr("type", "button");
+        // closeButton.addClass('btn-close')
+        // closeButton.attr('aria-label', "Close")
+
+        // add event listener to the close button
+        
+
+        hanger.innerHTML += `<li class="outfit"><button class="btn-close" type="button" aria-label="Close">CLOSE</button><image src="${shirtSource}"><image src="${pantsSource}"><image src="${shoesSource}"></li>`;
+
+        $('.btn-close').on('click', function () {
+            var index = $(this).parent().index();
+            // remove the city from the cities array
+            topSavedStyles.splice(index, 1);
+
+            // save the updated cities array in local storage
+            localStorage.setItem('topSavedStyles', JSON.stringify(topSavedStyles));
+
+            // re-render the city list
+            init();
+        });
+    };}
+};
+
+init();
 
 
 $('#gohome').click(function (){
