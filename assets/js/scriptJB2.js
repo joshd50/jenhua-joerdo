@@ -4,6 +4,7 @@ var bottomSearch
 var topIndex = 0;
 var bottomIndex = 0;
 var shoeIndex = 0;
+// var entries = [];
 
 
 let topSavedStyles = [];
@@ -17,20 +18,28 @@ let shoeSavedStyles = [];
 const options = {
 	method: 'GET',
 	headers: {
-		'X-RapidAPI-Key': 'RAPID KEY',
+		'X-RapidAPI-Key': 'a30f9d1a37msh5cc175700f93f6fp1094cbjsn5d64306f2e3d',
 		'X-RapidAPI-Host': 'google-data-scraper.p.rapidapi.com'
 	}
 };
 
+// fetch('https://google-data-scraper.p.rapidapi.com/search/shop/tailored%20shirt?api_key=5e15448586c1e9fb698790dee1a4e40d', options)
+
+
 var gdataBaseUrl = 'https://google-data-scraper.p.rapidapi.com/search/shop/';
-var gdataKey = 'APIKey';
+var gdataKey = '?api_key=5e15448586c1e9fb698790dee1a4e40d';
 
 
 function fetchTopSearch (topSearch) {
 	topSearch = topSearch.split(' ');
 	topSearch = topSearch.join('+');
-	// console.log(gdataBaseUrl + topSearch + gdataKey);
+	console.log(gdataBaseUrl + topSearch + gdataKey);
     fetch(gdataBaseUrl + topSearch + gdataKey, options)
+
+
+    // https://google-data-scraper.p.rapidapi.com/search/shop/Navy+chinos?api_key=5e15448586c1e9fb698790dee1a4e40d
+    // https://google-data-scraper.p.rapidapi.com/search/shop/Navy+chinos?api_key=5e15448586c1e9fb698790dee1a4e40d
+
         .then(function(response) {
             if (!response.ok) {
                 throw new Error('Failed to get google data.');
@@ -43,13 +52,15 @@ function fetchTopSearch (topSearch) {
 			// console.log(data)
             localStorage.setItem('topData', JSON.stringify(data));
             renderTop(data);
+            // fetchBottomSearch(bottomSearch);
+            console.log(data)
         })
         .catch(function(error) {
             console.log('Error: ' + error.message);
         })
-        .finally(function() {
-            // renderCityList();
-        });
+        // .finally(function() {
+        //     // renderCityList();
+        // });
 	}
 
 // function (fetchMidSearch) {
@@ -62,7 +73,7 @@ function fetchTopSearch (topSearch) {
 function fetchBottomSearch (bottomSearch) {
 bottomSearch = bottomSearch.split(' ');
 	bottomSearch = bottomSearch.join('+');
-	// console.log(gdataBaseUrl + bottomSearch + gdataKey);
+	console.log(gdataBaseUrl + bottomSearch + gdataKey);
     fetch(gdataBaseUrl + bottomSearch + gdataKey, options)
         .then(function(response) {
             if (!response.ok) {
@@ -76,6 +87,8 @@ bottomSearch = bottomSearch.split(' ');
 			// console.log(data)
             localStorage.setItem('bottomData', JSON.stringify(data));
             renderBottom(data);
+            // fetchShoeSearch(shoeSearch);
+            console.log(data)
         })
         .catch(function(error) {
             console.log('Error: ' + error.message);
@@ -88,7 +101,7 @@ bottomSearch = bottomSearch.split(' ');
 	function fetchShoeSearch (shoeSearch) {
 		shoeSearch = shoeSearch.split(' ');
 	shoeSearch = shoeSearch.join('+');
-	// console.log(gdataBaseUrl + shoeSearch + gdataKey);
+	console.log(gdataBaseUrl + shoeSearch + gdataKey);
     fetch(gdataBaseUrl + shoeSearch + gdataKey, options)
         .then(function(response) {
             if (!response.ok) {
@@ -201,10 +214,15 @@ function pullAIdata(){
     // } else {
         console.log(rawData);
 
+
+
         var entries =  rawData.split(",");
-        fetchTopSearch(entries[0]);
-        fetchBottomSearch(entries[1]);
-        fetchShoeSearch(entries[2]);
+        fetchTopSearch(entries[0].trim());
+        fetchBottomSearch(entries[1].trim());
+        fetchShoeSearch(entries[2].trim());
+        // bottomSearch = entries[1].trim()
+        // shoeSearch = entries[2].trim()
+        
     // }
 }
 // turn on when switching to live
@@ -375,7 +393,7 @@ function init() {
     };}
 };
 
-init();
+// init();
 
 
 $('#gohome').click(function (){
