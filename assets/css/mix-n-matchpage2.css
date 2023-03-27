@@ -302,6 +302,13 @@ form button:active {
     height: 96%;
     margin: 0.5% auto 2%;
     background-color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+.outfit img {
+    height: 30%;
+
 }
 
 .outfit li div {
@@ -455,6 +462,14 @@ footer {
     height: 100%;
     overflow: scroll;
 }
+}
+
+.btn-close {
+    display: block;
+    height: 5%;
+    width: 30%;
+    border-radius: 25px;
+    background-color: white;
 }
 
 /* 
