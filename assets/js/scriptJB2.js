@@ -11,26 +11,25 @@ let bottomSavedStyles = [];
 let shoeSavedStyles = [];
 
 
-
-
-
+// options key to use rapidAPI for google scraper
 const options = {
 	method: 'GET',
 	headers: {
-		'X-RapidAPI-Key': 'RAPID KEY',
+		'X-RapidAPI-Key': 'a30f9d1a37msh5cc175700f93f6fp1094cbjsn5d64306f2e3d',
 		'X-RapidAPI-Host': 'google-data-scraper.p.rapidapi.com'
 	}
 };
 
-var gdataBaseUrl = 'https://google-data-scraper.p.rapidapi.com/search/shop/';
-var gdataKey = 'APIKey';
+// keys for google scraper
+var gdataBaseUrl = 'https://cors-anywhere.herokuapp.com/https://google-data-scraper.p.rapidapi.com/search/shop/';
+var gdataKey = '?api_key=5e15448586c1e9fb698790dee1a4e40d';
 
 
 function fetchTopSearch (topSearch) {
 	topSearch = topSearch.split(' ');
 	topSearch = topSearch.join('+');
-	// console.log(gdataBaseUrl + topSearch + gdataKey);
     fetch(gdataBaseUrl + topSearch + gdataKey, options)
+
         .then(function(response) {
             if (!response.ok) {
                 throw new Error('Failed to get google data.');
@@ -39,30 +38,19 @@ function fetchTopSearch (topSearch) {
         })
         .then(function(data) {
             // handle the response data
-
-			// console.log(data)
             localStorage.setItem('topData', JSON.stringify(data));
+            // render response data
             renderTop(data);
         })
         .catch(function(error) {
             console.log('Error: ' + error.message);
         })
-        .finally(function() {
-            // renderCityList();
-        });
 	}
 
-// function (fetchMidSearch) {
-// 	fetch(gdataBaseUrl + midSearch + gdataKey, options)
-// 	.then(response => response.json())
-// 	.then(response => console.log(response))
-// 	.catch(err => console.error(err));
-// }
 
 function fetchBottomSearch (bottomSearch) {
 bottomSearch = bottomSearch.split(' ');
 	bottomSearch = bottomSearch.join('+');
-	// console.log(gdataBaseUrl + bottomSearch + gdataKey);
     fetch(gdataBaseUrl + bottomSearch + gdataKey, options)
         .then(function(response) {
             if (!response.ok) {
@@ -72,23 +60,18 @@ bottomSearch = bottomSearch.split(' ');
         })
         .then(function(data) {
             // handle the response data
-
-			// console.log(data)
             localStorage.setItem('bottomData', JSON.stringify(data));
+            // render response data
             renderBottom(data);
         })
         .catch(function(error) {
             console.log('Error: ' + error.message);
         })
-        .finally(function() {
-            // renderCityList();
-        });
 	}
 
 	function fetchShoeSearch (shoeSearch) {
 		shoeSearch = shoeSearch.split(' ');
 	shoeSearch = shoeSearch.join('+');
-	// console.log(gdataBaseUrl + shoeSearch + gdataKey);
     fetch(gdataBaseUrl + shoeSearch + gdataKey, options)
         .then(function(response) {
             if (!response.ok) {
@@ -98,33 +81,30 @@ bottomSearch = bottomSearch.split(' ');
         })
         .then(function(data) {
             // handle the response data
-
-			console.log(data)
             localStorage.setItem('shoeData', JSON.stringify(data));
+            // render response data
             renderShoe(data);
         })
         .catch(function(error) {
             console.log('Error: ' + error.message);
         })
-        .finally(function() {
-            // renderCityList();
-        });
 	}
 
-// for (var i = 0; i < Math.min(3, topData.shopping_results.length); i++)
+
 
 function renderTop (topData) {
 	for (var i = topIndex; i < topIndex + 3; i++) {
-        // console.log(topData.shopping_results[i])
+        // pulls needed information from response
 		var topImage = topData.shopping_results[i].thumbnail;
 		var topTitle = topData.shopping_results[i].title;
 		var topLink = topData.shopping_results[i].link;
 		var topPrice = topData.shopping_results[i].price;
 		var topSource = topData.shopping_results[i].source;
 
+        // gets card to push
 		var currentCard = $('#topCont').find(`#card${i -  topIndex}`);
-		// console.log(currentCard);
 
+        // pushes data into elements
 		currentCard.find('.shirts').attr('src', null);
 		currentCard.find('.shirts').attr('src',topImage);
 		currentCard.find('h5').text(topSource);
@@ -138,15 +118,17 @@ function renderTop (topData) {
 
 function renderBottom (bottomData) {
 	for (var i = bottomIndex; i < bottomIndex + 3; i++) {
-        // console.log(bottomData.shopping_results[i])
+        // pulls needed information from response
 		var bottomImage = bottomData.shopping_results[i].thumbnail;
 		var bottomTitle = bottomData.shopping_results[i].title;
 		var bottomLink = bottomData.shopping_results[i].link;
 		var bottomPrice = bottomData.shopping_results[i].price;
 		var bottomSource = bottomData.shopping_results[i].source;
 
+        // gets card to push
 		var currentCard = $('#bottomCont').find(`#card${i -  bottomIndex}`);
-		// console.log(currentCard);
+
+        // pushes data into elements
         currentCard.find('.pants').attr('src', '');
 		currentCard.find('.pants').attr('src',bottomImage);
 		currentCard.find('h5').text(bottomSource);
@@ -160,15 +142,17 @@ function renderBottom (bottomData) {
 
 function renderShoe (shoeData) {
 	for (var i = shoeIndex; i < shoeIndex + 3; i++) {
-        // console.log(shoeData.shopping_results[i])
+        // pulls needed information from response
 		var shoeImage = shoeData.shopping_results[i].thumbnail;
 		var shoeTitle = shoeData.shopping_results[i].title;
 		var shoeLink = shoeData.shopping_results[i].link;
 		var shoePrice = shoeData.shopping_results[i].price;
 		var shoeSource = shoeData.shopping_results[i].source;
 
+        // gets card to push
 		var currentCard = $('#shoeCont').find(`#card${i - shoeIndex}`);
-		// console.log(currentCard);
+
+        // pushes data into elements
         currentCard.find('.shoes').attr('src', '');
 		currentCard.find('.shoes').attr('src',shoeImage);
 		currentCard.find('h5').text(shoeSource);
@@ -180,45 +164,32 @@ function renderShoe (shoeData) {
 	}
 }
 
-
-// GPT
-//  GPT Text
-
-// split into three
-
-
-
-	// fetchTopSearch(topText);
-	// fetchBottomSearch(bottomText);
-	// fetchShoeSearch(shoeText);
-
-// console.log(topData.filtered_results)
-
+// initial function to pull response from GPT which is stored locally
 function pullAIdata(){
     var rawData = localStorage.getItem('data');
-    // if (rawData = null) {
-    //     return
-    // } else {
-        console.log(rawData);
-
         var entries =  rawData.split(",");
-        fetchTopSearch(entries[0]);
-        fetchBottomSearch(entries[1]);
-        fetchShoeSearch(entries[2]);
-    // }
+
+        // trims to remove blank spaces
+        fetchTopSearch(entries[0].trim());
+        fetchBottomSearch(entries[1].trim());
+        fetchShoeSearch(entries[2].trim());
 }
+
 // turn on when switching to live
 pullAIdata();
 
 // turn off when switching to live
-// localStorage.setItem('topData', JSON.stringify(object));
-// localStorage.setItem('bottomData', JSON.stringify(object));
-// localStorage.setItem('shoeData', JSON.stringify(object));
+// localStorage.setItem('topData', JSON.stringify(topObject));
+// localStorage.setItem('bottomData', JSON.stringify(bottomObject));
+// localStorage.setItem('shoeData', JSON.stringify(shoeObject));
 
-// renderBottom(object);
-// renderShoe(object);
-// renderTop(object);
-// console.log(object)
+// renderBottom(bottomObject);
+// renderShoe(shoeObject);
+// renderTop(topObject);
+
+
+// following functions are for rotating when arrows are clicked
+// all right clicks take last object of back end and pushes to beginng. Left is vice versa
 
 $('.rightShirts').click(function(){
     var topData = JSON.parse(localStorage.getItem('topData'))
@@ -269,108 +240,71 @@ $('.leftShoes').click(function(){
 })
 
 
+
 $('#saveDesign').click(function(event) {
   // Find the main shirt card and get its information
-  event.preventDefault();
-  var mainShirtCard = $('.mainShirts').children().first();
-  console.log(mainShirtCard);
-  var mainShirtImage = mainShirtCard.find('.shirts').attr('src');
-  console.log(mainShirtImage);
-  var mainShirtTitle = mainShirtCard.find('p.first').text();
-  console.log(mainShirtTitle);
-  var mainShirtLink = mainShirtCard.find('a').attr('href');
-  var mainShirtPrice = mainShirtCard.find('p.second').text();
-  var mainShirtSource = mainShirtCard.find('h5').text();
+    event.preventDefault();
+    var mainShirtCard = $('.mainShirts').children().first();
+    var mainShirtImage = mainShirtCard.find('.shirts').attr('src');
+    var mainShirtTitle = mainShirtCard.find('p.first').text();
+    var mainShirtLink = mainShirtCard.find('a').attr('href');
+    var mainShirtPrice = mainShirtCard.find('p.second').text();
+    var mainShirtSource = mainShirtCard.find('h5').text();
 
-  // Pants
-  var mainPantsCard = $('.mainPants').children().first();
-  var mainPantsImage = mainPantsCard.find('.pants').attr('src');
+    // Pants
+    var mainPantsCard = $('.mainPants').children().first();
+    var mainPantsImage = mainPantsCard.find('.pants').attr('src');
 
-  // Shoes
-  var mainShoesCard = $('.mainShoes').children().first();
-  var mainShoesImage = mainShoesCard.find('.shoes').attr('src');
-  // Create an object with the main shirt information
-  var imageShirtSource = mainShirtImage;
-  var imagePantsSource = mainPantsImage;
-  var imageShoesSource = mainShoesImage;
-  var mainObject = {
+    // Shoes
+    var mainShoesCard = $('.mainShoes').children().first();
+    var mainShoesImage = mainShoesCard.find('.shoes').attr('src');
+    // Create an object with the main shirt information
+    var imageShirtSource = mainShirtImage;
+    var imagePantsSource = mainPantsImage;
+    var imageShoesSource = mainShoesImage;
+    var mainObject = {
     mainShirt: imageShirtSource,
     mainPants: imagePantsSource,
     mainShoes: imageShoesSource
-  };
-  console.log(mainObject);
+    };
 
-  // Add the main shirt object to the saved styles array
-  
-  // Save the saved styles array to local storage
-  topSavedStyles.push(mainObject);
-  localStorage.setItem("topSavedStyles", JSON.stringify(topSavedStyles));
-//   var tops = localStorage.getItem("topSavedStyles");
-    // var topsData = JSON.parse(tops);
-    // var hanger = document.querySelector("#hanger");
-//   for(i=0; i <topsData.length; i++) {
-//     var shirtSource = topsData[i].mainShirt;
-//     var pantsSource = topsData[i].mainPants;
-//     var shoesSource = topsData[i].mainShoes;
-//     hanger.innerHTML += `<li class="outfit"><image src="${shirtSource}"><image src="${pantsSource}"><image src="${shoesSource}"></li>`;
-// };
-  init();
+    // Add the main shirt object to the saved styles array
+    // Save the saved styles array to local storage
+    topSavedStyles.push(mainObject);
+    localStorage.setItem("topSavedStyles", JSON.stringify(topSavedStyles));
+
+
+    init();
 });
 
-//   // Create an object with the main shirt information
-//   $('#saveDesign').click(function() {
-//     preventDefault();
-//   var mainShirtObject = {
-//     image: mainShirtImage,
-//     title: mainShirtTitle,
-//     link: mainShirtLink,
-//     price: mainShirtPrice,
-//     source: mainShirtSource
-//   };
-//   console.log(mainShirtObject);
-
-//   // Add the main shirt object to the saved styles array
-//   topSavedStyles.push(mainShirtObject);
-
-//   // Save the saved styles array to local storage
-//   localStorage.setItem("topSavedStyles", JSON.stringify(topSavedStyles));
-
-// });
 
 function init() {
     var topSaved = JSON.parse(localStorage.getItem("topSavedStyles"));
     console.log(topSaved);
     var hanger = document.querySelector("#hanger");
     if(topSaved !== null) { 
-    topSavedStyles = topSaved;
+        topSavedStyles = topSaved;
         hanger.innerHTML = '';
-        console.log(topSavedStyles)
-    for(i=0; i <topSavedStyles.length; i++) {
+        for(i=0; i <topSavedStyles.length; i++) {
 
-        var shirtSource = topSaved[i].mainShirt;
-        var pantsSource = topSaved[i].mainPants;
-        var shoesSource = topSaved[i].mainShoes;
+            var shirtSource = topSaved[i].mainShirt;
+            var pantsSource = topSaved[i].mainPants;
+            var shoesSource = topSaved[i].mainShoes;
 
-        // closeButton = $('<button>')
-        // closeButton.attr("type", "button");
-        // closeButton.addClass('btn-close')
-        // closeButton.attr('aria-label', "Close")
-
-        // add event listener to the close button
         
+            hanger.innerHTML += `<li class="outfit"><button class="btn-close" type="button" aria-label="Close">CLOSE</button><image src="${shirtSource}"><image src="${pantsSource}"><image src="${shoesSource}"></li>`;
 
-        hanger.innerHTML += `<li class="outfit"><button class="btn-close" type="button" aria-label="Close">CLOSE</button><image src="${shirtSource}"><image src="${pantsSource}"><image src="${shoesSource}"></li>`;
+            // add event listener to the close button
+            $('.btn-close').on('click', function () {
+                var index = $(this).parent().index();
+                // remove the city from the cities array
+                topSavedStyles.splice(index, 1);
 
-        $('.btn-close').on('click', function () {
-            var index = $(this).parent().index();
-            // remove the city from the cities array
-            topSavedStyles.splice(index, 1);
+                // save the updated cities array in local storage
+                localStorage.setItem('topSavedStyles', JSON.stringify(topSavedStyles));
 
-            // save the updated cities array in local storage
-            localStorage.setItem('topSavedStyles', JSON.stringify(topSavedStyles));
-
-            // re-render the city list
-            init();
+                // re-render the city list
+                init();
         });
     };}
 };
