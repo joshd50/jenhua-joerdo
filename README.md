@@ -38,9 +38,6 @@ Homepage
 Styles
 ![styles generator](./assets/%20images/stylesandpast.png)
 
-Generated Second Look
-![outfits generator](./assets/%20images/generatedresults.html.png)
-
 WIREFRAME:
 ![wireframe1](./assets/%20images/wireframe1.png)
 ![wireframe2](./assets/%20images/wireframe2.png)
