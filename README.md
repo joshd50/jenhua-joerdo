@@ -37,14 +37,12 @@ Styles
 
 ![styles generator](./assets/%20images/stylesandpast.png)
 
-Generated Second Look
-![outfits generator](./assets/%20images/generatedresults.html.png)
 
 WIREFRAME:
 
-![wireframe1](./assets/%20images/openingpagewireframe.png)
-![wireframe2](./assets/%20images/outfitwireframe.png)
-![wireframe3](./assets/%20images/savedstyleswireframe.png)
+![wireframe1](./assets/%20images/wireframe1.png)
+![wireframe2](./assets/%20images/wireframe2.png)
+![wireframe3](./assets/%20images/wireframe3.pngg)
 
 ## Credits
 
@@ -53,11 +51,15 @@ WIREFRAME:
     Eduardo Enriquez(https://github.com/LaloEnri23)
     Joseph Baek (https://github.com/jbaek97)
     Jennifer Mejia (https://github.com/jjjgm)
+
 OpenAI API Reference (https://platform.openai.com/docs/api-reference)
+
 Scraper API Reference (https://www.scraperapi.com/guides/)
+
 ## License
 
 MIT
+
 (reference repository for license information)
 [https://choosealicense.com/](https://choosealicense.com/)
 
